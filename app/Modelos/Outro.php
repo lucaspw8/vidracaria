@@ -4,7 +4,7 @@ namespace App\Modelos;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Material extends Model
+class Outro extends Model
 {
     //
 }
