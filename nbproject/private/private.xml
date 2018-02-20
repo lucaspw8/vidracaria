@@ -5,7 +5,8 @@
         <group>
             <file>file:/C:/xampp/htdocs/vidracaria/routes/web.php</file>
             <file>file:/C:/xampp/htdocs/vidracaria/app/Http/Controllers/ClienteController.php</file>
-            <file>file:/C:/xampp/htdocs/vidracaria/resources/views/clienteteste.blade.php</file>
+            <file>file:/C:/xampp/htdocs/vidracaria/app/Http/Controllers/AcessorioController.php</file>
+            <file>file:/C:/xampp/htdocs/vidracaria/app/Http/Controllers/EspessuraController.php</file>
         </group>
     </open-files>
 </project-private>

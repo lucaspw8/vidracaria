@@ -46,12 +46,7 @@ class ClienteController extends Controller
         $cli = $this->cliente->find($id);
         return view('clienteShow', compact('cli'));
         
-        if($verif){
-              return redirect()->route('teste');
-        }
-        else{
-             return redirect()->route('teste');
-        }
+       
      }
     
     
