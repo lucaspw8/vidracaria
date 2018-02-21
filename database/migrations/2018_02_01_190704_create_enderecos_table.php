@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateKitBoxesTable extends Migration
+class CreateEnderecosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateKitBoxesTable extends Migration
      */
     public function up()
     {
-        Schema::create('kit-boxes', function (Blueprint $table) {
+        Schema::create('enderecos', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreateKitBoxesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kit-boxes');
+        Schema::dropIfExists('enderecos');
     }
 }

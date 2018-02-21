@@ -4,7 +4,9 @@ namespace App\Modelos;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Espessura_Vidro extends Model
+class Espessura extends Model
 {
-    //
+     public $timestamps = false;
+     protected $fillable = ['id','espessura'];
+     
 }
