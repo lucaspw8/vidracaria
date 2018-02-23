@@ -1,4 +1,4 @@
-@extendas('templates.menu')
+@extends('templates.menu')
 
 @section('conteudo')
 
