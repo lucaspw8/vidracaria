@@ -19,12 +19,8 @@ class ClienteController extends Controller
     {
         //$listaCli = $this->cliente->all();
         //return view('cursoLista', compact('listaCli'));
-<<<<<<< HEAD
+        dd("Teste");
         return view('clienteCadastro');
-=======
-        //novo teste
-        return view('clientenew');
->>>>>>> 192addfb5d2f03e30f93559d36d1acad9b271d8e
     }
     
     public function create() {
