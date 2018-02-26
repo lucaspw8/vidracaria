@@ -19,8 +19,12 @@ class ClienteController extends Controller
     {
         //$listaCli = $this->cliente->all();
         //return view('cursoLista', compact('listaCli'));
+<<<<<<< HEAD
+        return view('clienteCadastro');
+=======
         //novo teste
         return view('clientenew');
+>>>>>>> 192addfb5d2f03e30f93559d36d1acad9b271d8e
     }
     
     public function create() {
@@ -37,7 +41,7 @@ class ClienteController extends Controller
         $dados = $r->all();
         $verif = $this->cliente->create($dados);
         if ($verif) {
-            return redirect()->route('teste');
+            return dd($dados);//redirect()->route('teste');
         } else {
             return redirect()->route('teste');
         }
