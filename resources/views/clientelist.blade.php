@@ -24,7 +24,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <a href="newpage.html" class="btn btn-outline-warning text-uppercase">Novo cliente</a>
+          <a href="{{route('cliente.create')}}" class="btn btn-outline-warning text-uppercase">Novo cliente</a>
         </div>
       </div>
     </div>
@@ -43,18 +43,14 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Felipe Almeida</td>
-                <td>078.897.987-11</td>
-                <td>vainessa@gmail.com</td>
-                <td>Rua avara keraba</td>
-              </tr>
-              <tr>
-                <td>Lucas Moura</td>
-                <td>345.098.897-42</td>
-                <td>seinao@gmail.com</td>
-                <td>Rua bartolomeu </td>
-              </tr>
+             @foreach($listaCli as $cli)
+             <tr onclick="location.href='{{route('cliente.show',$cli->id)}}';">
+                <td>{{$cli->nome}}</td>
+                <td>{{$cli->cpf}}</a></td>
+                <td>{{$cli->email}}</a></td>
+                <!--<td>{{$cli->endereco}}</td>--> 
+            </tr>
+          @endforeach
             </tbody>
           </table>
         </div>

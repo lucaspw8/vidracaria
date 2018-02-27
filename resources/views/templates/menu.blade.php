@@ -19,7 +19,7 @@
             <a class="nav-link" href="menu.html"><i class="fa d-inline fa-lg fa-home"></i> Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="clientes.html"><i class="fa d-inline fa-lg fa-user"></i> Clientes</a>
+            <a class="nav-link" href="{{route('cliente.index')}}"><i class="fa d-inline fa-lg fa-user"></i> Clientes</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="pedidos.html"><i class="fa d-inline fa-lg fa-shopping-bag"></i> Pedidos</a>
