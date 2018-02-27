@@ -1,7 +1,7 @@
 @extends('templates.menu')
 
 @section('conteudo')
-
+<br><br>
  <div class="py-1">
     <div class="container">
       <div class="row">
@@ -30,7 +30,7 @@
                     <input type="email" class="form-control" name="email" placeholder="E-mail"> 
                  </div>
             </div>
-             <p class="lead col-md-12 bg-light border-warning"><b>ENDEREÇO:</b></p>
+              <p class="lead col-md-12 bg-light "><b>ENDEREÇO:</b></p>
              <div class="col-md-6">
                 <div class="form-group">
                     <input type="text" class="form-control" name="logradouro" placeholder="Logradouro"> 
