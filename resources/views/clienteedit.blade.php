@@ -54,7 +54,6 @@
              <div class="col-md-12 ">
                  <div class="form-group">
               {{method_field('PUT')}}    
-              {{method_field('DELETE')}} 
              {{csrf_field()}}
             <button class="btn d-inline-flex text-dark text-uppercase text-center btn-outline-success">Salvar</button>
                  </div>

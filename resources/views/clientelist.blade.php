@@ -1,8 +1,6 @@
 @extends('templates.menu')
-
 @section('conteudo')
 <br><br>
-
 <div class="py-3">
     <div class="container">
       <div class="row">
@@ -40,14 +38,28 @@
                 <th>Cpf</th>
                 <th>E-mail</th>
                 <th>Endereço</th>
+                <th>Opção</th>
               </tr>
             </thead>
             <tbody>
              @foreach($listaCli as $cli)
              <tr onclick="location.href='{{route('cliente.show',$cli->id)}}';">
                 <td>{{$cli->nome}}</td>
-                <td>{{$cli->cpf}}</a></td>
-                <td>{{$cli->email}}</a></td>
+                <td>{{$cli->cpf}}</td>
+                <td>{{$cli->email}}</td>
+                <td>
+                   <form action={{route('cliente.destroy',$cli->id)}} method="POST">
+              <button class="btn btn-danger" style="margin-left: 5px">
+                  <span type='submit' class='glyphicon glyphicon-trash'>
+                  </span>
+              </button>
+              {{method_field('delete')}}
+              {{csrf_field()}}
+          </form>
+                </td>
+         
+               
+                
                 <!--<td>{{$cli->endereco}}</td>--> 
             </tr>
           @endforeach
