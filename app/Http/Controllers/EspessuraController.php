@@ -17,8 +17,7 @@ class EspessuraController extends Controller
      * @return type
      */
     public function index(){
-        $listaEspessura = $this->espessura->all();
-        return  $listaEspessura;
+       
     }
     
     public function create(){
@@ -80,5 +79,10 @@ class EspessuraController extends Controller
         else{
             return redirect ()->route ('curso.show', compact('menu') ,$id)->with (['errors'=>'Erro ao Deletar']);
         }
+    }
+    
+     public function listar(){
+          $listaEspessura = $this->espessura->all();
+          return  $listaEspessura;
     }
 }
