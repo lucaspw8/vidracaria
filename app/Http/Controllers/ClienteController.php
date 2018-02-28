@@ -69,7 +69,7 @@ class ClienteController extends Controller
      * @return type
      */
     
-    public function destroy($id) {
+    public function delete($id) {
         $cli = $this->cliente->find($id);
         $verif = $cli->delete();
         

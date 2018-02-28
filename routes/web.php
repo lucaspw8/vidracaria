@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/cliente/delete/{id}','ClienteController@delete')->name("cliente.delete");
 
 Route::get('/teste', function () {
    $teste = DB::table('clientes')->get();
