@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" type="text/css">
- 
   <link rel="stylesheet" href="{{url('css/theme.css')}}" type="text/css"> </head>
 
 <body class="">
@@ -19,7 +19,7 @@
             <a class="nav-link" href="menu.html"><i class="fa d-inline fa-lg fa-home"></i> Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="clientes.html"><i class="fa d-inline fa-lg fa-user"></i> Clientes</a>
+            <a class="nav-link" href="{{route('cliente.index')}}"><i class="fa d-inline fa-lg fa-user"></i> Clientes</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="pedidos.html"><i class="fa d-inline fa-lg fa-shopping-bag"></i> Pedidos</a>

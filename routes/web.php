@@ -15,9 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/cliente', function () {
-    return view('clientenew');
-});
+Route::get('/cliente/delete/{id}','ClienteController@delete')->name("cliente.delete");
 
 Route::get('/teste', function () {
    $teste = App\Modelos\Cliente::find(1);
@@ -26,7 +24,7 @@ Route::get('/teste', function () {
     return 'welcome';
 });
 //Rota personalizada criada para a pesquisa de cliente por nome
-Route::get('cliente/{nomeCli}','ClienteController@pesquisar')->name("pesquisarCli");
+Route::get('cliente/buscar/{nomeCli}','ClienteController@pesquisar')->name("pesquisarCli");
 
 //Recursos de rotas dos modelos
 Route::resource('cliente','ClienteController');

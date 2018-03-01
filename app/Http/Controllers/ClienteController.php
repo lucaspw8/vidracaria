@@ -17,13 +17,13 @@ class ClienteController extends Controller
 
     public function index()
     {
-        //$listaCli = $this->cliente->all();
-        //return view('cursoLista', compact('listaCli'));
-        return view('clienteCadastro');
+        $listaCli = $this->cliente->all();
+        return view('clientelist', compact('listaCli'));
+        
     }
     
     public function create() {
-        
+          return view('clienteCadastro');
     }
     /**
      * Função que cadastra um novo Cliente
@@ -38,15 +38,15 @@ class ClienteController extends Controller
         $dados['cliente_id'] = $verif['id'];
         $this->cliente->endereco()->create($dados);
         if ($verif) {
-            return dd($dados);//redirect()->route('teste');
+            return redirect()->route('cliente.index');
         } else {
-            return redirect()->route('teste');
+            return redirect()->route('cliente.index');
         }
     }
     
      public function show($id) {
         $cli = $this->cliente->find($id);
-        return view('clienteShow', compact('cli'));
+        return view('clienteedit', compact('cli'));
         
        
      }
@@ -58,10 +58,10 @@ class ClienteController extends Controller
         $cli = $this->cliente->find($id);
         $verif = $cli->update($dados);
         if ($verif){
-            return redirect()->route('curso.index');
+            return redirect()->route('cliente.show',$id);
         }
         else{
-            return redirect()->route('curso.edit');
+            return redirect()->route('cliente.show',$id);;
         }
     }
     
@@ -71,15 +71,15 @@ class ClienteController extends Controller
      * @return type
      */
     
-    public function destroy($id) {
+    public function delete($id) {
         $cli = $this->cliente->find($id);
         $verif = $cli->delete();
         
         if($verif){
-            return redirect()->route('curso.index', compact('menu'));
+            return redirect()->route('cliente.index');
         }
         else{
-            return redirect ()->route ('curso.show', compact('menu') ,$id)->with (['errors'=>'Erro ao Deletar']);
+            return redirect ()->route ('cliente.show',$id)->with (['errors'=>'Erro ao Deletar']);
         }
     }
     /**
