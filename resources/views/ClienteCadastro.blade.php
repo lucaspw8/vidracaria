@@ -49,6 +49,7 @@
              <div class="col-md-6">
                <div class="form-group">
                 <input type="text" class="form-control" name="cidade" placeholder="Cidade"> 
+                <input type="hidden" name="cliente_id" > 
                </div>
             </div>
              <div class="col-md-12 ">

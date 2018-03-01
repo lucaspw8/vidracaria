@@ -35,6 +35,8 @@ class ClienteController extends Controller
        
         $dados = $r->all();
         $verif = $this->cliente->create($dados);
+        $dados['cliente_id'] = $verif['id'];
+        $this->cliente->endereco()->create($dados);
         if ($verif) {
             return dd($dados);//redirect()->route('teste');
         } else {

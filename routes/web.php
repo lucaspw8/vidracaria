@@ -20,8 +20,8 @@ Route::get('/cliente', function () {
 });
 
 Route::get('/teste', function () {
-   $teste = DB::table('clientes')->get();
-   dd($teste);
+   $teste = App\Modelos\Cliente::find(1);
+   dd($teste->endereco);
   
     return 'welcome';
 });
