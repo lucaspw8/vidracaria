@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Modelos\Cliente;
+use App\Http\Requests\clienteRequest;
 
 class ClienteController extends Controller
 {
@@ -30,7 +31,7 @@ class ClienteController extends Controller
      * @param Request $r
      * @return type
      */
-    public function store(Request $r){
+    public function store(clienteRequest $r){
         
        
         $dados = $r->all();
@@ -52,7 +53,7 @@ class ClienteController extends Controller
      }
     
     
-     public function update(Request $request, $id) {
+     public function update(clienteRequest $request, $id) {
       
         $dados = $request->all();
         $cli = $this->cliente->find($id);
