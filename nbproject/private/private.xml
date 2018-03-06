@@ -8,6 +8,8 @@
             <file>file:/C:/xampp/htdocs/vidracaria/app/Http/Controllers/ClienteController.php</file>
             <file>file:/C:/xampp/htdocs/vidracaria/app/Modelos/Cliente.php</file>
             <file>file:/C:/xampp/htdocs/vidracaria/resources/views/ClienteCadastro.blade.php</file>
+            <file>file:/C:/xampp/htdocs/vidracaria/resources/views/clienteedit.blade.php</file>
+            <file>file:/C:/xampp/htdocs/vidracaria/app/Http/Requests/clienteRequest.php</file>
         </group>
     </open-files>
 </project-private>

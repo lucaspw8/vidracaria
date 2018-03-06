@@ -51,7 +51,12 @@ class ClienteController extends Controller
         
        
      }
-    
+    /**
+     * 
+     * @param clienteRequest $request
+     * @param type $id
+     * @return type
+     */
     
      public function update(clienteRequest $request, $id) {
       
