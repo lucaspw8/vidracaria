@@ -17,7 +17,7 @@ class FerragemController extends Controller
 
     public function store(Request $r){
         $dados = $r->all();
-       $verif = $this->ferragem->create($dados);
+        $verif = $this->ferragem->create($dados);
         
         if ($verif) {
             return dd($dados);//redirect()->route('teste');

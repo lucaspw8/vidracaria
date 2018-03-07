@@ -11,6 +11,21 @@
       </div>
     </div>
   </div>
+@if(isset($errors) && count($errors)>0)
+<div class="py-1">
+   <div class="container">
+    <div class="row">
+     <div class="col-md-12">
+            <div class="alert alert-danger">
+                @foreach($errors->all() as $erro)
+                <p>{{$erro}}</p>
+                @endforeach
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
+@endif
 <div class="container">
     <form class="form" method="post" action="{{route('cliente.store')}}" >
         <p class="lead col-md-12 bg-light "><b>DADOS PESSOAIS:</b></p>
@@ -35,7 +50,6 @@
                     <input type="email" class="form-control" name="email" placeholder="E-mail"> 
                  </div>
             </div>
-             <p class="lead col-md-12 bg-light border-warning"><b>ENDEREÇO:</b></p>
               <p class="lead col-md-12 bg-light "><b>ENDEREÇO:</b></p>
              <div class="col-md-6">
                 <div class="form-group">
