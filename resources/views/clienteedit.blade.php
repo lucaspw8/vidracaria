@@ -31,9 +31,14 @@
     <form class="form" method="post" action="{{route('cliente.update', $cli->id)}}" >
         <p class="lead col-md-12 bg-light "><b>DADOS PESSOAIS:</b></p>
          <div class="row">
-           <div class="col-md-12"> 
+           <div class="col-md-6"> 
             <div class="form-group">
               <input type="text" class="form-control d-inline-flex" name="nome" placeholder="Nome" value="{{$cli->nome or old('nome')}}"> <small class="form-text text-muted"></small> 
+            </div>
+           </div>
+             <div class="col-md-6"> 
+            <div class="form-group">
+              <input type="text" class="form-control d-inline-flex" name="telefone" placeholder="Telefone" value="{{$cli->telefone or old('telefone')}}"> <small class="form-text text-muted"></small> 
             </div>
            </div>
             <div class="col-md-6"> 
@@ -49,22 +54,22 @@
               <p class="lead col-md-12 bg-light "><b>ENDEREÇO:</b></p>
              <div class="col-md-6">
                 <div class="form-group">
-                    <input type="text" class="form-control" name="logradouro" placeholder="Logradouro"> 
+                    <input type="text" class="form-control" name="logradouro" placeholder="Logradouro"  value="{{$cli->endereco->logradouro or old('logradouro')}}"> 
                 </div>
             </div>
              <div class="col-md-6">
                 <div class="form-group">
-                    <input type="text" class="form-control" name="bairro" placeholder="Bairro"> 
+                    <input type="text" class="form-control" name="bairro" placeholder="Bairro"  value="{{$cli->endereco->bairro or old('bairro')}}"> 
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <input type="text" class="form-control" name="numero" placeholder="Número"> 
+                    <input type="text" class="form-control" name="numero" placeholder="Número"  value="{{$cli->endereco->numero or old('numero')}}"> 
                 </div>
             </div>
              <div class="col-md-6">
                <div class="form-group">
-                <input type="text" class="form-control" name="cidade" placeholder="Cidade"> 
+                <input type="text" class="form-control" name="cidade" placeholder="Cidade"  value="{{$cli->endereco->cidade or old('cidade')}}"> 
                </div>
             </div>
              <div class="col-md-12 ">

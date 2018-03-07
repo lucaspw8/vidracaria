@@ -35,9 +35,12 @@ class ClienteController extends Controller
         
        
         $dados = $r->all();
-        $verif = $this->cliente->create($dados);
-        $dados['cliente_id'] = $verif['id'];
-        $this->cliente->endereco()->create($dados);
+        if($dados['logradouro']!=NULL &&$dados['cidade']!=NULL && $dados['numero']!=NULL ){
+          $verif = $this->cliente->create($dados)->endereco()->create($dados);
+        }else{
+            $verif = $this->cliente->create($dados);
+        }
+        
         if ($verif) {
             return redirect()->route('cliente.index');
         } else {
@@ -62,7 +65,12 @@ class ClienteController extends Controller
       
         $dados = $request->all();
         $cli = $this->cliente->find($id);
-        $verif = $cli->update($dados);
+        if($dados['logradouro']!=$cli->endereco->logradouro || $dados['cidade']!=$cli->endereco->cidade || $dados['numero']!=$cli->endereco->numero ){
+          $verif = $this->cliente->save($dados);
+          $this->cliente->endereco()->update($dados);
+        }else{
+            $verif = $this->cliente->update($dados);
+        }
         if ($verif){
             return redirect()->route('cliente.show',$id);
         }

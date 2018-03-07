@@ -38,6 +38,7 @@
                 <th>Nome</th>
                 <th>Cpf</th>
                 <th>E-mail</th>
+                <th>Telefone</th>
                 <th>Endereço</th>
                 <th>Deletar</th>
               </tr>
@@ -48,6 +49,8 @@
                 <td>{{$cli->nome}}</td>
                 <td>{{$cli->cpf}}</td>
                 <td>{{$cli->email}}</td>
+                <td>{{$cli->telefone}}</td>
+                <td>@if($cli->endereco){{$cli->endereco->logradouro}}@endif</td>
                 <td>
                    <a onclick="return confirm('Deseja excluir esse registro?')" href="{{route('cliente.delete', $cli->id) }}" class="btn btn-danger btn-xs">
                        <span class="glyphicon glyphicon-remove" ></span> Excluir
