@@ -64,18 +64,30 @@ class ClienteController extends Controller
      public function update(clienteRequest $request, $id) {
       
         $dados = $request->all();
+        //$endereco = $dados;
+        $endereco = [
+            'logradouro' => $dados['logradouro'],
+            'bairro' => $dados['bairro'],
+            'numero' => $dados['numero'],
+            'cidade' => $dados['cidade']
+        ];        
         $cli = $this->cliente->find($id);
-        if($dados['logradouro']!=$cli->endereco->logradouro || $dados['cidade']!=$cli->endereco->cidade || $dados['numero']!=$cli->endereco->numero ){
-          $verif = $this->cliente->save($dados);
-          $this->cliente->endereco()->update($dados);
-        }else{
-            $verif = $this->cliente->update($dados);
-        }
-        if ($verif){
-            return redirect()->route('cliente.show',$id);
-        }
+        $verif = $cli->update($dados);
+        //Atualiza o endereço quando o cliente ja possui um 
+        if($cli->endereco != null){
+            $cli->endereco()->update($endereco);                       
+      }
+        //Cria um novo endereço caso o cliente não possua
         else{
-            return redirect()->route('cliente.show',$id);;
+          if($dados['logradouro']!=NULL &&$dados['cidade']!=NULL && $dados['numero']!=NULL ){
+           $cli->endereco()->create($endereco);               
+        }
+           
+        }       
+         if ($verif){
+          return redirect()->route('cliente.show',$id);
+        }else{
+           return redirect()->route('cliente.show',$id);;
         }
     }
     

@@ -25,9 +25,9 @@ class clienteRequest extends FormRequest
     {
         return [
             'nome'      => 'required|string|min:3|max:50',
-            'cpf'       => 'min:11|max:11|numeric',
+            'cpf'       => 'min:11|max:11',
             'email'     => 'max:50',
-            'telefone'  => 'numeric|min:9|max:9'
+            'telefone'  => 'nullable|numeric|min:9|max:9'
         ];
     }
     
