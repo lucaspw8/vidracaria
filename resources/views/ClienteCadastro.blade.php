@@ -15,9 +15,14 @@
     <form class="form" method="post" action="{{route('cliente.store')}}" >
         <p class="lead col-md-12 bg-light "><b>DADOS PESSOAIS:</b></p>
          <div class="row">
-           <div class="col-md-12"> 
+           <div class="col-md-6"> 
             <div class="form-group">
               <input type="text" class="form-control d-inline-flex" name="nome" placeholder="Nome" value="{{old('nome')}}"> <small class="form-text text-muted"></small> 
+            </div>
+           </div>
+             <div class="col-md-6"> 
+            <div class="form-group">
+              <input type="text" class="form-control d-inline-flex" name="telefone" placeholder="Telefone" value="{{old('telefone')}}"> <small class="form-text text-muted"></small> 
             </div>
            </div>
             <div class="col-md-6"> 
@@ -50,7 +55,7 @@
              <div class="col-md-6">
                <div class="form-group">
                 <input type="text" class="form-control" name="cidade" placeholder="Cidade"> 
-                <input type="hidden" name="cliente_id" > 
+                
                </div>
             </div>
              <div class="col-md-12 ">
