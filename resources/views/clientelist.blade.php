@@ -32,7 +32,8 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <table class="table">
+         <div class="table-responsive">
+          <table class="table table-striped table-hover table-bordered">
             <thead>
               <tr>
                 <th>Nome</th>
@@ -40,7 +41,7 @@
                 <th>E-mail</th>
                 <th>Telefone</th>
                 <th>Endereço</th>
-                <th>Deletar</th>
+                <th>Remover</th>
               </tr>
             </thead>
             <tbody>
@@ -59,11 +60,13 @@
          
                
                 
-                <!--<td>{{$cli->endereco}}</td>--> 
+                
             </tr>
           @endforeach
             </tbody>
           </table>
+          {{$listaCli->links()}}
+         </div>
         </div>
       </div>
     </div>

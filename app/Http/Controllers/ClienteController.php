@@ -17,8 +17,8 @@ class ClienteController extends Controller
     }
 
     public function index()
-    {
-        $listaCli = $this->cliente->all();
+    {       
+        $listaCli = Cliente::Paginate(3);
         return view('clientelist', compact('listaCli'));
         
     }
