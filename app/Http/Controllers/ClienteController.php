@@ -18,7 +18,7 @@ class ClienteController extends Controller
 
     public function index()
     {       
-        $listaCli = Cliente::Paginate(3);
+        $listaCli = Cliente::Paginate(10);
         return view('clientelist', compact('listaCli'));
         
     }
@@ -113,9 +113,9 @@ class ClienteController extends Controller
      * @param type $nome
      * @return type
      */
-    public function pesquisar($nome){
-         $cli = $this->cliente::where('nome','like',$nome."%")->get();
-         return view('clienteteste', compact('cli'));
+    public function pesquisar(Request $nome){
+         $listaCli = $this->cliente::where('nome','like',$nome->buscar."%")->paginate(3);
+         return view('clientelist', compact('listaCli'));
     }
     
 }

@@ -10,21 +10,22 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//Rotas
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('home');
+})->name("home");
 
+Route::get('/material', function () {
+    return view('materialHome');
+})->name("material");
+
+//Rotas de deletar
 Route::get('/cliente/delete/{id}','ClienteController@delete')->name("cliente.delete");
+Route::get('/espessura/delete/{id}','EspessuraController@delete')->name("espessura.delete");
 
-Route::get('/teste', function () {
-   $teste = App\Modelos\Cliente::find(1);
-   dd($teste->endereco);
-  
-    return 'welcome';
-});
+
 //Rota personalizada criada para a pesquisa de cliente por nome
-Route::get('cliente/buscar/{nomeCli}','ClienteController@pesquisar')->name("pesquisarCli");
+Route::post('cliente/buscar','ClienteController@pesquisar')->name("pesquisarCli");
 
 //Recursos de rotas dos modelos
 Route::resource('cliente','ClienteController');

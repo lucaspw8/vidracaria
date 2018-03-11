@@ -4,9 +4,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-   
+  <title>EC Portão</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" type="text/css">
   <link rel="stylesheet" href="{{url('css/theme.css')}}" type="text/css"> </head>
+   
 
 <body class="">
   <nav class="navbar navbar-expand-md navbar-dark bg-laranja">
@@ -16,7 +17,7 @@
       <div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="menu.html"><i class="fa d-inline fa-lg fa-home"></i> Home</a>
+            <a class="nav-link" href="{{route('home')}}"><i class="fa d-inline fa-lg fa-home"></i> Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{route('cliente.index')}}"><i class="fa d-inline fa-lg fa-user"></i> Clientes</a>
@@ -28,7 +29,7 @@
             <a class="nav-link" href="#"><i class="fa d-inline fa-lg fa-product-hunt"></i> Produtos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fa d-inline fa-lg fa-glass"></i> Materiais</a>
+            <a class="nav-link" href="{{route('material')}}"><i class="fa d-inline fa-lg fa-glass"></i> Materiais</a>
           </li>
         </ul>
         <a class="btn navbar-btn ml-2 text-white btn-link"><i class="fa d-inline fa-lg fa-user-circle-o"></i> Login</a>

@@ -27,7 +27,7 @@ class clienteRequest extends FormRequest
             'nome'      => 'required|string|min:3|max:50',
             'cpf'       => 'min:11|max:11',
             'email'     => 'max:50',
-            'telefone'  => 'nullable|numeric|min:9|max:9'
+            'telefone'  => 'numeric|numeric'
         ];
     }
     
@@ -41,9 +41,7 @@ class clienteRequest extends FormRequest
             'cpf.max'           =>  'O campo CPF deve conter 11 digitos!',
             'cpf.numeric'       =>  'O CPF deve ser numérico!',
             'email'             =>  'O campo Email deve conter no maximo 50 caracteres!',
-            'telefone.numeric'  =>  'O campo Telefone deve conter somente numeros!',
-            'telefone.min'      =>  'Telefoe possui 9 digitos!',
-            'telefone.max'      =>  'Telefoe possui 9 digitos!',
+            'telefone.numeric'  =>  'O campo Telefone deve conter somente numeros!',           
         ];
     }
 }

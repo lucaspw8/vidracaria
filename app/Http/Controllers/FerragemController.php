@@ -12,8 +12,10 @@ class FerragemController extends Controller
     }
     
     public function index(){
-        
+        return view('ferragemNew');
     }
+    
+
 
     public function store(Request $r){
         $dados = $r->all();

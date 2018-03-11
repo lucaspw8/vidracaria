@@ -17,7 +17,8 @@ class EspessuraController extends Controller
      * @return type
      */
     public function index(){
-       
+        $listaEspessura = $this->espessura::paginate(3);
+        return view('espessura', compact('listaEspessura'));
     }
     
     public function create(){
@@ -32,15 +33,16 @@ class EspessuraController extends Controller
         $dados = $request->all();
         $verif = $this->espessura->create($dados);
         if ($verif) {
-            return redirect()->route('teste');
+            return redirect()->route('espessura.index');
         } else {
-            return redirect()->route('teste');
+            return redirect()->route('espessura.index')->with (['errors'=>'Erro ao cadastrar']);
         }
     }
     
      public function show($id) {
-        $espessura = $this->espessura->find($id);
-        return view('clienteShow', compact('espessura'));
+        $espess = $this->espessura->find($id);
+        $listaEspessura = $this->espessura::paginate(3);
+        return view('espessuraEdit', compact('espess','listaEspessura'));
         
      }
     
@@ -56,10 +58,10 @@ class EspessuraController extends Controller
         $espessura = $this->espessura->find($id);
         $verif = $espessura->update($dados);
         if ($verif){
-            return redirect()->route('curso.index');
+            return redirect()->route('espessura.show', compact('id'));
         }
         else{
-            return redirect()->route('curso.edit');
+            return redirect()->route('espessura.show', compact('id'));
         }
     }
     
@@ -69,16 +71,21 @@ class EspessuraController extends Controller
      * @return type
      */
     
-    public function destroy($id) {
+    public function delete($id){
         $espessura = $this->espessura->find($id);
         $verif = $espessura->delete();
         
         if($verif){
-            return redirect()->route('curso.index', compact('menu'));
+            return redirect()->route('espessura.index');
         }
         else{
-            return redirect ()->route ('curso.show', compact('menu') ,$id)->with (['errors'=>'Erro ao Deletar']);
+            return redirect ()->route ('espessura.index')->with (['errors'=>'Erro ao Deletar']);
         }
+    }
+
+
+    public function destroy() {
+      
     }
     
      public function listar(){
