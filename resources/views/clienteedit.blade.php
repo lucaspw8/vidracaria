@@ -38,12 +38,12 @@
            </div>
              <div class="col-md-6"> 
             <div class="form-group">
-              <input type="text" class="form-control d-inline-flex" name="telefone" placeholder="Telefone" value="{{$cli->telefone or old('telefone')}}"> <small class="form-text text-muted"></small> 
+              <input type="text" class="form-control d-inline-flex" name="telefone" placeholder="Telefone" data-mask="(00) 00000-0000" value="{{$cli->telefone or old('telefone')}}"> <small class="form-text text-muted"></small> 
             </div>
            </div>
             <div class="col-md-6"> 
                 <div class="form-group">
-                    <input type="text" class="form-control" name="cpf" placeholder="Cpf" value="{{$cli->cpf or old('cpf')}}"> 
+                    <input type="text" class="form-control" name="cpf" data-mask="000.000.000-00" placeholder="Cpf" value="{{$cli->cpf or old('cpf')}}"> 
                 </div>
             </div>
             <div class="col-md-6">
