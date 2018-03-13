@@ -25,9 +25,9 @@ class clienteRequest extends FormRequest
     {
         return [
             'nome'      => 'required|string|min:3|max:50',
-            'cpf'       => 'min:11|max:11',
-            'email'     => 'max:50',
-            'telefone'  => 'numeric|numeric'
+            'cpf'       => 'min:14|max:14',
+            'email'     => 'max:45',
+            'telefone'  => 'min:15|max:15'
         ];
     }
     
@@ -40,8 +40,9 @@ class clienteRequest extends FormRequest
             'cpf.min'           =>  'O campo CPF deve conter 11 digitos!',
             'cpf.max'           =>  'O campo CPF deve conter 11 digitos!',
             'cpf.numeric'       =>  'O CPF deve ser numérico!',
-            'email'             =>  'O campo Email deve conter no maximo 50 caracteres!',
-            'telefone.numeric'  =>  'O campo Telefone deve conter somente numeros!',           
+            'email'             =>  'O campo Email deve conter no maximo 45 caracteres!',
+            'telefone.min'      =>  'Telefone possui 11 digitos!',
+            'telefone.max'      =>  'Telefone possui 11 digitos!',  
         ];
     }
 }

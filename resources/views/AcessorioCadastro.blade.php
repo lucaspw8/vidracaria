@@ -6,7 +6,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h1 class="">Cadastro de cliente</h1>
+          <h1 class="">Cadastro de Acessorio</h1>
         </div>
       </div>
     </div>
@@ -27,8 +27,8 @@
 </div>
 @endif
 <div class="container">
-    <form class="form" method="post" action="{{route('cliente.store')}}" >
-        <p class="lead col-md-12 bg-light "><b>DADOS PESSOAIS:</b></p>
+    <form class="form" method="post" action="{{route('acessorio.store')}}" >
+        <p class="lead col-md-12 bg-light "><b>DADOS:</b></p>
          <div class="row">
            <div class="col-md-6"> 
             <div class="form-group">
@@ -37,12 +37,12 @@
            </div>
              <div class="col-md-6"> 
             <div class="form-group">
-              <input type="text" class="form-control d-inline-flex" name="telefone" data-mask="(00) 00000-0000" placeholder="Telefone" value="{{old('telefone')}}"> 
+              <input type="text" class="form-control d-inline-flex" name="valorCompra" data-mask="(00) 00000-0000" placeholder="Valor compra" value="{{old('valorCompra')}}"> 
             </div>
            </div>
             <div class="col-md-6"> 
                 <div class="form-group">
-                    <input type="text" class="form-control" data-mask="000.000.000-00" name="cpf" placeholder="Cpf Ex.: 000.000.000-00" value="{{old('cpf')}}"> 
+                    <input type="text" class="form-control" name="valorVenda" placeholder="Valor venda" value="{{old('valorVenda')}}"> 
                 </div>
             </div>
             <div class="col-md-6">
@@ -50,7 +50,7 @@
                     <input type="email" class="form-control" name="email" placeholder="E-mail"> 
                  </div>
             </div>
-              <p class="lead col-md-12 bg-light "><b>ENDEREÇO:</b></p>
+              
              <div class="col-md-6">
                 <div class="form-group">
                     <input type="text" class="form-control" name="logradouro" placeholder="Logradouro"> 
@@ -61,17 +61,8 @@
                     <input type="text" class="form-control" name="bairro" placeholder="Bairro"> 
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <input type="text" class="form-control" name="numero" placeholder="Número"> 
-                </div>
-            </div>
-             <div class="col-md-6">
-               <div class="form-group">
-                <input type="text" class="form-control" name="cidade" placeholder="Cidade"> 
-                
-               </div>
-            </div>
+           
+            <!--Botão cadastrar-->
              <div class="col-md-12 ">
                  <div class="form-group">
              {{csrf_field()}}
