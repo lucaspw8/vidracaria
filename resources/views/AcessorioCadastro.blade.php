@@ -32,36 +32,45 @@
          <div class="row">
            <div class="col-md-6"> 
             <div class="form-group">
-              <input type="text" class="form-control d-inline-flex" name="nome" placeholder="Nome" value="{{old('nome')}}"> 
+              <input type="text" class="form-control d-inline-flex" name="tipo" placeholder="Tipo" value="{{old('tipo')}}"> 
             </div>
            </div>
-             <div class="col-md-6"> 
+             <div class="col-md-3"> 
             <div class="form-group">
-              <input type="text" class="form-control d-inline-flex" name="valorCompra" data-mask="(00) 00000-0000" placeholder="Valor compra" value="{{old('valorCompra')}}"> 
+              <input type="text" class="form-control d-inline-flex" name="valorCompra" placeholder="Valor compra" value="{{old('valorCompra')}}"> 
             </div>
            </div>
-            <div class="col-md-6"> 
-                <div class="form-group">
-                    <input type="text" class="form-control" name="valorVenda" placeholder="Valor venda" value="{{old('valorVenda')}}"> 
+            <div class="col-md-3"> 
+                <div class="form-group">                                  
+                     <input type="text" class="form-control" name="valorVenda" placeholder="Valor venda" value="{{old('valorVenda')}}">                               
                 </div>
             </div>
             <div class="col-md-6">
                  <div class="form-group">
-                    <input type="email" class="form-control" name="email" placeholder="E-mail"> 
+                    <select name="espessura" class="form-control">
+                        <option>Espessura</option>
+                        @if($listaEspessura)
+                            @foreach($listaEspessura as $espessura)
+                            <option value="{{$espessura->id}}">{{$espessura->espessura}}mm</option>
+                            @endforeach
+                        @endif
+                    </select>
                  </div>
             </div>
               
              <div class="col-md-6">
                 <div class="form-group">
-                    <input type="text" class="form-control" name="logradouro" placeholder="Logradouro"> 
+                  <select name="tamanho" class="form-control">
+                        <option>Tamanho</option>
+                         @if($listaTamanho)
+                            @foreach($listaTamanho as $tamanho)
+                            <option value="{{$tamanho->id}}" >{{$tamanho->tamanho}}</option>
+                            @endforeach
+                        @endif
+
+                    </select>
                 </div>
             </div>
-             <div class="col-md-6">
-                <div class="form-group">
-                    <input type="text" class="form-control" name="bairro" placeholder="Bairro"> 
-                </div>
-            </div>
-           
             <!--Botão cadastrar-->
              <div class="col-md-12 ">
                  <div class="form-group">

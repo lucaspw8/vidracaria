@@ -17,13 +17,13 @@ class Acessorio extends Model
       * @return hasOne
       */
      public function Tamanho(){
-         return $this->hasOne(Tamanho::class);
+         return $this->belongsTo(Tamanho::class);
      }
       /**
        * Função que retorna a espessura do Acessorio
        * @return type
        */
       public function Espessura(){
-         return $this->hasOne(Espessura::class);
+         return $this->belongsTo(Espessura::class);
      }
 }

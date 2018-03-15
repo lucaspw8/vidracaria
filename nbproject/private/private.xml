@@ -4,8 +4,10 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/xampp/htdocs/vidracaria/resources/views/AcessorioCadastro.blade.php</file>
-            <file>file:/C:/xampp/htdocs/vidracaria/resources/views/AcessorioList.blade.php</file>
+            <file>file:/C:/xampp/htdocs/vidracaria/routes/web.php</file>
+            <file>file:/C:/xampp/htdocs/vidracaria/app/Http/Controllers/ClienteController.php</file>
             <file>file:/C:/xampp/htdocs/vidracaria/app/Http/Controllers/AcessorioController.php</file>
+            <file>file:/C:/xampp/htdocs/vidracaria/app/Modelos/Acessorio.php</file>
         </group>
     </open-files>
 </project-private>

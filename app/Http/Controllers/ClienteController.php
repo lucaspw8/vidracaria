@@ -35,7 +35,7 @@ class ClienteController extends Controller
         
        
         $dados = $r->all();
-        if($dados['logradouro']!=NULL &&$dados['cidade']!=NULL && $dados['numero']!=NULL ){
+        if($dados['logradouro']!=NULL && $dados['cidade']!=NULL && $dados['numero']!=NULL ){
           $verif = $this->cliente->create($dados)->endereco()->create($dados);
         }else{
             $verif = $this->cliente->create($dados);

@@ -26,7 +26,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <a href="{{route('cliente.create')}}" class="btn btn-outline-warning text-uppercase">Novo Acessorio</a>
+          <a href="{{route('acessorio.create')}}" class="btn btn-outline-warning text-uppercase">Novo Acessorio</a>
         </div>
       </div>
     </div>
@@ -44,12 +44,13 @@
                 <th>Valor venda</th>
                 <th>Tamanho</th>
                 <th>Espessura</th>
+                <th>Excluir</th>
               </tr>
             </thead>
             <tbody>
              @foreach($listaAcessorio as $lista)
              <tr onclick="location.href='{{route('cliente.show',$lista->id)}}';">
-                <td>{{$lista->nome}}</td>               
+                <td>{{$lista->tipo}}</td>               
                 <td>{{$lista->valorCompra}}</td>
                 <td>{{$lista->valorVenda}}</td>
                 <td>@if($lista->Tamanho){{$lista->Tamanho->tamanho}}@endif</td>
