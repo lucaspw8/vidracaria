@@ -32,5 +32,5 @@ Route::resource('cliente','ClienteController');
 Route::resource('espessura','EspessuraController');
 Route::resource('acessorio','AcessorioController');
 Route::resource('ferragem','FerragemController');
-
+Route::resource('tamanho','TamanhoController');
 
