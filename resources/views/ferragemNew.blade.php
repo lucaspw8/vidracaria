@@ -37,19 +37,16 @@
            </div>
              <div class="col-md-6"> 
             <div class="form-group">
-              <input type="text" class="form-control d-inline-flex" name="telefone" placeholder="Telefone" value="{{old('telefone')}}"> <small class="form-text text-muted"></small> 
+              <input type="text" class="form-control d-inline-flex" name="descricao" placeholder="Descrição" value="{{old('telefone')}}"> <small class="form-text text-muted"></small> 
             </div>
            </div>
-            <div class="col-md-6"> 
-                <div class="form-group">
-                    <input type="text" class="form-control" name="cpf" placeholder="Cpf" value="{{old('cpf')}}"> 
-                </div>
-            </div>
-            <div class="col-md-6">
-                 <div class="form-group">
-                    <input type="email" class="form-control" name="email" placeholder="E-mail"> 
-                 </div>
-            </div>
+           <form>
+                <select name="Cor">
+                  <option value="branco">Branco</option>
+                  <option value="fosco">Fosco</option>
+                  <option value="latao">Latão</option>
+                </select>
+            </form>
              
              <div class="col-md-12 ">
                  <div class="form-group">
