@@ -24,19 +24,18 @@ class acessorioRequest extends FormRequest
     public function rules()
     {
         return [
-           'nome'          =>  'required|string',
+           'tipo'          =>  'required|string',
            'valorCompra'   =>  'required|numeric',
            'valorVenda'    =>  'required|numeric',
-          
            
         ];
     }
     
     public function messages() {
         return[
-            'nome.required'        => 'O Nome é obrigatório!',
-            'nome.string'          => 'Nome deve conter apenas letras!',
-            'valorCompra.required' => 'Necessario informar um valor para compra',
+            'nome.required'        => 'Tipo é obrigatório!',
+            'nome.string'          => 'Tipo deve conter apenas letras!',
+            'valorCompra.required' => 'Necessario informar um valor compra',
             'valorCompra.numeric'  => 'Valor compra deve ser numérico!',
             'valorVenda.required'  => 'Deve-se informar um valor de venda!',
             'valorVenda.numeric'   => 'Valor de venda deve ser numérico'

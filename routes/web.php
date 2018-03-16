@@ -22,6 +22,8 @@ Route::get('/material', function () {
 //Rotas de deletar
 Route::get('/cliente/delete/{id}','ClienteController@delete')->name("cliente.delete");
 Route::get('/espessura/delete/{id}','EspessuraController@delete')->name("espessura.delete");
+Route::get('/tamanho/delete/{id}','TamanhoController@delete')->name("tamanho.delete");
+Route::get('/acessorio/delete/{id}','AcessorioController@delete')->name("acessorio.delete");
 
 
 //Rota personalizada criada para a pesquisa de cliente por nome

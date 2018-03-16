@@ -43,7 +43,7 @@ extends('templates.menu')
             <tbody>
             @foreach($listaTamanho as $tamanho)
              <tr onclick="location.href='{{route('tamanho.show',$tamanho->id)}}';">
-                 <td>{{$espessura->espessura}}</td>
+                 <td>{{$tamanho->tamanho}}</td>
                  <td>
                    <a onclick="return confirm('Deseja excluir esse registro?')" href="{{route('tamanho.delete', $tamanho->id) }}" class="btn btn-danger btn-xs">
                        <span class="glyphicon glyphicon-remove" >Excluir</span> 
@@ -59,7 +59,7 @@ extends('templates.menu')
       
       
         <div class="col-md-6">
-        <form class="form" method="post" action="{{route('tamanho.update',$espess->id)}}" >
+        <form class="form" method="post" action="{{route('tamanho.update',$tamanho->id)}}" >
        
        
            <div class="col-md-6"> 

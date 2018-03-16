@@ -9,8 +9,8 @@ use App\Modelos\Espessura;
 class Acessorio extends Model
 {
     public $timestamps = false;
-    protected $fillable = ['id','tipo','valorCompra','valorVenda'];
-     protected $hidden = ['tamanho','espessura'];
+     protected $fillable = ['id','tipo','valorCompra','valorVenda'];
+     protected $hidden = ['tamanho_id','espessura_id'];
      
      /**
       * Função que retorna o tamanho do Acessorio

@@ -49,14 +49,14 @@
             </thead>
             <tbody>
              @foreach($listaAcessorio as $lista)
-             <tr onclick="location.href='{{route('cliente.show',$lista->id)}}';">
+             <tr onclick="location.href='{{route('acessorio.show',$lista->id)}}';">
                 <td>{{$lista->tipo}}</td>               
                 <td>{{$lista->valorCompra}}</td>
                 <td>{{$lista->valorVenda}}</td>
                 <td>@if($lista->Tamanho){{$lista->Tamanho->tamanho}}@endif</td>
                 <td>@if($lista->Espessura){{$lista->Espessura->espessura}}@endif</td>
                 <td>
-                   <a onclick="return confirm('Deseja excluir esse registro?')" href="{{route('cliente.delete', $lista->id) }}" class="btn btn-danger btn-xs">
+                   <a onclick="return confirm('Deseja excluir esse registro?')" href="{{route('acessorio.delete', $lista->id) }}" class="btn btn-danger btn-xs">
                        <span class="glyphicon glyphicon-remove" >Excluir</span> 
                    </a>
                 </td>
