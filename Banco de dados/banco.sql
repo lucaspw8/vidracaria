@@ -22,17 +22,22 @@ CREATE TABLE IF NOT EXISTS `acessorios` (
   `tipo` varchar(45) NOT NULL,
   `valorCompra` float NOT NULL,
   `valorVenda` float NOT NULL,
-  `tamanho` int(11) DEFAULT NULL,
-  `espessura` int(11) DEFAULT NULL,
+  `tamanho_id` int(11) DEFAULT NULL,
+  `espessura_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_Acessorio_Tamanho1_idx` (`tamanho`),
-  KEY `fk_Acessorio_Espessura_Vidro1_idx` (`espessura`),
-  CONSTRAINT `fk_Acessorio_Espessura_Vidro1` FOREIGN KEY (`espessura`) REFERENCES `espessuras` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Acessorio_Tamanho1` FOREIGN KEY (`tamanho`) REFERENCES `tamanhos` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  KEY `fk_Acessorio_Tamanho1_idx` (`tamanho_id`),
+  KEY `fk_Acessorio_Espessura_Vidro1_idx` (`espessura_id`),
+  CONSTRAINT `fk_Acessorio_Espessura_Vidro1` FOREIGN KEY (`espessura_id`) REFERENCES `espessuras` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Acessorio_Tamanho1` FOREIGN KEY (`tamanho_id`) REFERENCES `tamanhos` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
--- Copiando dados para a tabela vidracaria.acessorios: ~0 rows (aproximadamente)
+-- Copiando dados para a tabela vidracaria.acessorios: ~4 rows (aproximadamente)
+DELETE FROM `acessorios`;
 /*!40000 ALTER TABLE `acessorios` DISABLE KEYS */;
+INSERT INTO `acessorios` (`id`, `tipo`, `valorCompra`, `valorVenda`, `tamanho_id`, `espessura_id`) VALUES
+	(2, 'Barra lateral', 28, 30, NULL, 6),
+	(4, 'Rodapé de', 32, 38, 1, NULL),
+	(5, 'Rodapé', 22222, 29.3, NULL, 3);
 /*!40000 ALTER TABLE `acessorios` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela vidracaria.acessorios_has_produtos
@@ -47,6 +52,7 @@ CREATE TABLE IF NOT EXISTS `acessorios_has_produtos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Copiando dados para a tabela vidracaria.acessorios_has_produtos: ~0 rows (aproximadamente)
+DELETE FROM `acessorios_has_produtos`;
 /*!40000 ALTER TABLE `acessorios_has_produtos` DISABLE KEYS */;
 /*!40000 ALTER TABLE `acessorios_has_produtos` ENABLE KEYS */;
 
@@ -61,12 +67,13 @@ CREATE TABLE IF NOT EXISTS `clientes` (
 ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 
 -- Copiando dados para a tabela vidracaria.clientes: ~4 rows (aproximadamente)
+DELETE FROM `clientes`;
 /*!40000 ALTER TABLE `clientes` DISABLE KEYS */;
 INSERT INTO `clientes` (`id`, `nome`, `cpf`, `email`, `telefone`) VALUES
-	(14, 'Izaias', '77211299312', NULL, '212345115'),
+	(14, 'Izaias', '772.112.993-12', NULL, '(21) 23451-1566'),
 	(15, 'Fernanda Lima Bezerra', '56679919128', NULL, NULL),
 	(16, 'Mateus Castro', NULL, NULL, NULL),
-	(17, 'Lucas Moura Miranda', '057.008.033-99', NULL, '21234511522'),
+	(17, 'Lucas Moura Miranda', '057.008.033-99', NULL, '(21) 23451-1522'),
 	(18, 'Maryana', '098.997.645-32', NULL, '(88) 21355-1561');
 /*!40000 ALTER TABLE `clientes` ENABLE KEYS */;
 
@@ -84,6 +91,7 @@ CREATE TABLE IF NOT EXISTS `enderecos` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- Copiando dados para a tabela vidracaria.enderecos: ~1 rows (aproximadamente)
+DELETE FROM `enderecos`;
 /*!40000 ALTER TABLE `enderecos` DISABLE KEYS */;
 INSERT INTO `enderecos` (`id`, `logradouro`, `bairro`, `numero`, `cidade`, `cliente_id`) VALUES
 	(1, 'Cuíca', 'Pega avoante', '5232', 'Cedro', 14);
@@ -97,12 +105,13 @@ CREATE TABLE IF NOT EXISTS `espessuras` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- Copiando dados para a tabela vidracaria.espessuras: ~5 rows (aproximadamente)
+DELETE FROM `espessuras`;
 /*!40000 ALTER TABLE `espessuras` DISABLE KEYS */;
 INSERT INTO `espessuras` (`id`, `espessura`) VALUES
 	(3, 20),
 	(4, 11),
 	(5, 25),
-	(6, 12),
+	(6, 5),
 	(7, 15);
 /*!40000 ALTER TABLE `espessuras` ENABLE KEYS */;
 
@@ -116,6 +125,7 @@ CREATE TABLE IF NOT EXISTS `ferragems` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Copiando dados para a tabela vidracaria.ferragems: ~0 rows (aproximadamente)
+DELETE FROM `ferragems`;
 /*!40000 ALTER TABLE `ferragems` DISABLE KEYS */;
 /*!40000 ALTER TABLE `ferragems` ENABLE KEYS */;
 
@@ -131,6 +141,7 @@ CREATE TABLE IF NOT EXISTS `ferragems_has_produtos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Copiando dados para a tabela vidracaria.ferragems_has_produtos: ~0 rows (aproximadamente)
+DELETE FROM `ferragems_has_produtos`;
 /*!40000 ALTER TABLE `ferragems_has_produtos` DISABLE KEYS */;
 /*!40000 ALTER TABLE `ferragems_has_produtos` ENABLE KEYS */;
 
@@ -144,6 +155,7 @@ CREATE TABLE IF NOT EXISTS `kit_box_blindexs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Copiando dados para a tabela vidracaria.kit_box_blindexs: ~0 rows (aproximadamente)
+DELETE FROM `kit_box_blindexs`;
 /*!40000 ALTER TABLE `kit_box_blindexs` DISABLE KEYS */;
 /*!40000 ALTER TABLE `kit_box_blindexs` ENABLE KEYS */;
 
@@ -159,6 +171,7 @@ CREATE TABLE IF NOT EXISTS `kit_box_blindexs_has_produtos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Copiando dados para a tabela vidracaria.kit_box_blindexs_has_produtos: ~0 rows (aproximadamente)
+DELETE FROM `kit_box_blindexs_has_produtos`;
 /*!40000 ALTER TABLE `kit_box_blindexs_has_produtos` DISABLE KEYS */;
 /*!40000 ALTER TABLE `kit_box_blindexs_has_produtos` ENABLE KEYS */;
 
@@ -178,6 +191,7 @@ CREATE TABLE IF NOT EXISTS `outros` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Copiando dados para a tabela vidracaria.outros: ~0 rows (aproximadamente)
+DELETE FROM `outros`;
 /*!40000 ALTER TABLE `outros` DISABLE KEYS */;
 /*!40000 ALTER TABLE `outros` ENABLE KEYS */;
 
@@ -193,6 +207,7 @@ CREATE TABLE IF NOT EXISTS `outros_has_produtos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Copiando dados para a tabela vidracaria.outros_has_produtos: ~0 rows (aproximadamente)
+DELETE FROM `outros_has_produtos`;
 /*!40000 ALTER TABLE `outros_has_produtos` DISABLE KEYS */;
 /*!40000 ALTER TABLE `outros_has_produtos` ENABLE KEYS */;
 
@@ -209,6 +224,7 @@ CREATE TABLE IF NOT EXISTS `pedidos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Copiando dados para a tabela vidracaria.pedidos: ~0 rows (aproximadamente)
+DELETE FROM `pedidos`;
 /*!40000 ALTER TABLE `pedidos` DISABLE KEYS */;
 /*!40000 ALTER TABLE `pedidos` ENABLE KEYS */;
 
@@ -224,6 +240,7 @@ CREATE TABLE IF NOT EXISTS `pedidos_has_produtos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Copiando dados para a tabela vidracaria.pedidos_has_produtos: ~0 rows (aproximadamente)
+DELETE FROM `pedidos_has_produtos`;
 /*!40000 ALTER TABLE `pedidos_has_produtos` DISABLE KEYS */;
 /*!40000 ALTER TABLE `pedidos_has_produtos` ENABLE KEYS */;
 
@@ -240,6 +257,7 @@ CREATE TABLE IF NOT EXISTS `pedido_has_produto` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Copiando dados para a tabela vidracaria.pedido_has_produto: ~0 rows (aproximadamente)
+DELETE FROM `pedido_has_produto`;
 /*!40000 ALTER TABLE `pedido_has_produto` DISABLE KEYS */;
 /*!40000 ALTER TABLE `pedido_has_produto` ENABLE KEYS */;
 
@@ -252,6 +270,7 @@ CREATE TABLE IF NOT EXISTS `produtos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Copiando dados para a tabela vidracaria.produtos: ~0 rows (aproximadamente)
+DELETE FROM `produtos`;
 /*!40000 ALTER TABLE `produtos` DISABLE KEYS */;
 /*!40000 ALTER TABLE `produtos` ENABLE KEYS */;
 
@@ -267,6 +286,7 @@ CREATE TABLE IF NOT EXISTS `produtos_has_vidros` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Copiando dados para a tabela vidracaria.produtos_has_vidros: ~0 rows (aproximadamente)
+DELETE FROM `produtos_has_vidros`;
 /*!40000 ALTER TABLE `produtos_has_vidros` DISABLE KEYS */;
 /*!40000 ALTER TABLE `produtos_has_vidros` ENABLE KEYS */;
 
@@ -275,10 +295,13 @@ CREATE TABLE IF NOT EXISTS `tamanhos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `tamanho` varchar(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- Copiando dados para a tabela vidracaria.tamanhos: ~0 rows (aproximadamente)
+DELETE FROM `tamanhos`;
 /*!40000 ALTER TABLE `tamanhos` DISABLE KEYS */;
+INSERT INTO `tamanhos` (`id`, `tamanho`) VALUES
+	(1, 'G');
 /*!40000 ALTER TABLE `tamanhos` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela vidracaria.vidros
@@ -294,13 +317,10 @@ CREATE TABLE IF NOT EXISTS `vidros` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Copiando dados para a tabela vidracaria.vidros: ~0 rows (aproximadamente)
+DELETE FROM `vidros`;
 /*!40000 ALTER TABLE `vidros` DISABLE KEYS */;
 /*!40000 ALTER TABLE `vidros` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-<<<<<<< HEAD
-vacessoriosidracariavidracariavidracariavidracariavidracariavidracariaclientes
-=======
->>>>>>> 1812f91a75eb2d79004b3088b9905b2fc5470e6c

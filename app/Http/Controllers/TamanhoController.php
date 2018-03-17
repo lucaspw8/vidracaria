@@ -44,11 +44,29 @@ class TamanhoController extends Controller
         
      }
      
-     
+     /**
+     * Edita uma Espessura
+     * @param Request $request
+     * @param type $id
+     * @return type
+     */
+     public function update(Request $request, $id) {
+      
+        $dados = $request->all();
+        $tamanho = $this->tamanho->find($id);
+        $verif = $tamanho->update($dados);
+        if ($verif){
+            return redirect()->route('tamanho.show', compact('id'));
+        }
+        else{
+            return redirect()->route('tamanho.show', compact('id'))->withErrors($errors = "Erro ao editar");
+        }
+    }
+    
      
      
       /**
-     * Remove uma Espessura
+     * Remove um TAMANHO
      * @param type $id
      * @return type
      */

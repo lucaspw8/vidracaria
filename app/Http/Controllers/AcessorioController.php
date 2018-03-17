@@ -20,6 +20,7 @@ class AcessorioController extends Controller
      * @return type
      */
     public function index(){
+  
         $listaAcessorio = $this->acessorio::paginate(10);
         return view('AcessorioList', compact('listaAcessorio'));
     }
@@ -54,6 +55,7 @@ class AcessorioController extends Controller
            //logica de castro com Tamanho
             $tamanho = $this->tamanho->find($dados['tamanho']);
             $verif = $tamanho->acessorio()->create($dados);
+            
             if($verif){
                return redirect()->route('acessorio.index');
             }else{
@@ -85,30 +87,19 @@ class AcessorioController extends Controller
       
         $dados = $request->all();
         //verifica se os dados do combo box de tamanho ou espessura foram selecionados
-        if($dados['espessura']!='Espessura' && $dados['tamanho']=='Tamanho'){
-            
+        
+         
             //logica de atualizar com Espessura
-            $espessura = $this->espessura->find($dados['espessura']);
-            $acessorio = $this->acessorio->find($id);
-           $verif = $espessura->acessorio()->update($dados);
+           $acessorio = $this->acessorio->find($id);
+           $verif = $acessorio->update($dados);
+           
+            
             if($verif){
                return redirect()->route('acessorio.index');
             }else{
-                return redirect()->route('acessorio.create');
+                return redirect()->route('acessorio.update');
             }
-        }elseif ($dados['espessura']=='Espessura' && $dados['tamanho']!='Tamanho') {
-            
-           //logica de castro com Tamanho
-           $tamanho = $this->tamanho->find($dados['tamanho']);
-            if($verif){
-               return redirect()->route('acessorio.index');
-            }else{
-                return redirect()->route('acessorio.create');
-            }
-            
-        }else{
-           return redirect()->route('acessorio.create');
-        }
+       
     }
     
     /**
