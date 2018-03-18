@@ -24,6 +24,7 @@ Route::get('/cliente/delete/{id}','ClienteController@delete')->name("cliente.del
 Route::get('/espessura/delete/{id}','EspessuraController@delete')->name("espessura.delete");
 Route::get('/tamanho/delete/{id}','TamanhoController@delete')->name("tamanho.delete");
 Route::get('/acessorio/delete/{id}','AcessorioController@delete')->name("acessorio.delete");
+Route::get('/ferragem/delete/{id}','FerragemController@delete')->name("ferragem.delete");
 
 
 //Rota personalizada criada para a pesquisa de cliente por nome
@@ -35,4 +36,5 @@ Route::resource('espessura','EspessuraController');
 Route::resource('acessorio','AcessorioController');
 Route::resource('ferragem','FerragemController');
 Route::resource('tamanho','TamanhoController');
+Route::resource('kitbox','KitBoxController');
 
