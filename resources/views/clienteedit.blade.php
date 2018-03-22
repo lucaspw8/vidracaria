@@ -54,7 +54,7 @@
               <p class="lead col-md-12 bg-light "><b>ENDEREÇO:</b></p>
              <div class="col-md-6">
                 <div class="form-group">
-                    <input type="text" class="form-control" name="logradouro" placeholder="Logradouro"  value="{{$cli->endereco->logradouro or old('logradouro')}}"> 
+                    <input type="text" class="form-control" name="logradouro" placeholder="Logradouro*"  value="{{$cli->endereco->logradouro or old('logradouro')}}"> 
                 </div>
             </div>
              <div class="col-md-6">
@@ -64,12 +64,12 @@
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <input type="text" class="form-control" name="numero" placeholder="Número"  value="{{$cli->endereco->numero or old('numero')}}"> 
+                    <input type="text" class="form-control" name="numero" placeholder="Número*"  value="{{$cli->endereco->numero or old('numero')}}"> 
                 </div>
             </div>
              <div class="col-md-6">
                <div class="form-group">
-                <input type="text" class="form-control" name="cidade" placeholder="Cidade"  value="{{$cli->endereco->cidade or old('cidade')}}"> 
+                <input type="text" class="form-control" name="cidade" placeholder="Cidade*"  value="{{$cli->endereco->cidade or old('cidade')}}"> 
                </div>
             </div>
              <div class="col-md-12 ">

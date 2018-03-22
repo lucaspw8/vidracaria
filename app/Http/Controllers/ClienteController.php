@@ -81,7 +81,7 @@ class ClienteController extends Controller
         else{
           if($dados['logradouro']!=NULL &&$dados['cidade']!=NULL && $dados['numero']!=NULL ){
            $cli->endereco()->create($endereco);               
-        }
+            }
            
         }       
          if ($verif){
@@ -114,7 +114,7 @@ class ClienteController extends Controller
      * @return type
      */
     public function pesquisar(Request $nome){
-         $listaCli = $this->cliente::where('nome','like',$nome->buscar."%")->paginate(3);
+         $listaCli = $this->cliente::where('nome','like',$nome->buscar."%")->paginate(40);
          return view('clientelist', compact('listaCli'));
     }
     

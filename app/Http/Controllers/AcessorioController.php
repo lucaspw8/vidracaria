@@ -39,7 +39,7 @@ class AcessorioController extends Controller
         $dados = $request->all();
  
         //verifica se os dados do combo box de tamanho ou espessura foram selecionados
-        if($dados['espessura']!='Espessura' && $dados['tamanho']=='Tamanho'){
+        if($dados['espessura']!= 0 && $dados['tamanho']== 0){
             
             //logica de castro com Espessura
             $espessura = $this->espessura->find($dados['espessura']);
@@ -50,7 +50,7 @@ class AcessorioController extends Controller
             }else{
                 return redirect()->route('acessorio.create');
             }
-        }elseif ($dados['espessura']=='Espessura' && $dados['tamanho']!='Tamanho') {
+        }elseif($dados['tamanho']!= 0 && $dados['espessura']== 0) {
             
            //logica de castro com Tamanho
             $tamanho = $this->tamanho->find($dados['tamanho']);
@@ -85,21 +85,38 @@ class AcessorioController extends Controller
      */
      public function update(Request $request, $id) {
       
-        $dados = $request->all();
-        //verifica se os dados do combo box de tamanho ou espessura foram selecionados
-        
-         
-            //logica de atualizar com Espessura
+        $dados = $request->all(); 
+        if($dados['espessura']!= 0 && $dados['tamanho']== 0){
+        //logica de atualizar com Espessura
            $acessorio = $this->acessorio->find($id);
+           $acessorio->Espessura()->dissociate();           
+           $tamanho = $this->espessura->find($dados["espessura"]);
+           $acessorio->Espessura()->associate($tamanho);
            $verif = $acessorio->update($dados);
            
             
             if($verif){
                return redirect()->route('acessorio.index');
             }else{
-                return redirect()->route('acessorio.update');
+                return redirect()->route('acessorio.update',$id);
             }
-       
+        }elseif($dados['tamanho']!= 0 && $dados['espessura']== 0){
+            //logica de atualizar com Tamanho
+           $acessorio = $this->acessorio->find($id);
+           $acessorio->Tamanho()->dissociate();           
+           $tamanho = $this->tamanho->find($dados["tamanho"]);
+           $acessorio->Tamanho()->associate($tamanho);
+           $verif = $acessorio->update($dados);
+           
+            
+            if($verif){
+               return redirect()->route('acessorio.index');
+            }else{
+                return redirect()->route('acessorio.update',$id);
+            }
+        }else{
+            return redirect()->route('acessorio.update',$id);
+        }
     }
     
     /**

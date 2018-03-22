@@ -48,7 +48,7 @@
             <div class="col-md-6">
                  <div class="form-group">
                     <select name="espessura" class="form-control">
-                        <option>Espessura</option>
+                        <option value="0">Espessura</option>
                         @if($listaEspessura)
                             @foreach($listaEspessura as $espessura)
                             <option value="{{$espessura->id}}">{{$espessura->espessura}}mm</option>
@@ -61,7 +61,7 @@
              <div class="col-md-6">
                 <div class="form-group">
                   <select name="tamanho" class="form-control">
-                        <option>Tamanho</option>
+                        <option value="0">Tamanho</option>
                          @if($listaTamanho)
                             @foreach($listaTamanho as $tamanho)
                             <option value="{{$tamanho->id}}" >{{$tamanho->tamanho}}</option>

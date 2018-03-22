@@ -66,7 +66,9 @@
           @endforeach
             </tbody>
           </table>
+          @if($listaCli->links() != null)
           {{$listaCli->links()}}
+          @endif
          </div>
         </div>
       </div>

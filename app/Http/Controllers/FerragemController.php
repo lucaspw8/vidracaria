@@ -18,7 +18,7 @@ class FerragemController extends Controller
     }
     
      public function create() {
-          return view('ferragemCadastro');
+          return view('ferragemNew');
     }
 
 
