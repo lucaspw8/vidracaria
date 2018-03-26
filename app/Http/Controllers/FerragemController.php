@@ -12,21 +12,32 @@ class FerragemController extends Controller
     }
     
     public function index(){
-        return view('ferragemNew');
+         $listaFerra = Ferragem::Paginate(10);
+        return view('ferragemlist', compact('listaFerra'));
     }
     
-
+public function create() {
+          return view('ferragemNew');
+    }
 
     public function store(Request $r){
         $dados = $r->all();
         $verif = $this->ferragem->create($dados);
         
         if ($verif) {
-            return dd($dados);//redirect()->route('teste');
+            return redirect()->route('ferragem.index');
         } else {
-            return redirect()->route('teste');
+            return redirect()->route('ferragem.index');
         }
     }
+
+     public function show($id) {
+        $ferragem = $this->ferragem->find($id);
+        return view('ferragemEdit', compact('ferragem'));
+        
+       
+     }
+
     
      public function update(Request $request, $id) {
         $dados = $request->all();
@@ -40,15 +51,15 @@ class FerragemController extends Controller
         }
      }
      
-      public function destroy($id) {
+      public function delete($id) {
         $ferragem = $this->ferragem->find($id);
         $verif = $ferragem->delete();
         
         if($verif){
-            return redirect()->route('curso.index', compact('menu'));
+            return redirect()->route('ferragem.index');
         }
         else{
-            return redirect ()->route ('curso.show', compact('menu') ,$id)->with (['errors'=>'Erro ao Deletar']);
+            return redirect ()->route ('ferragem.show',$id);
         }
     }
     
