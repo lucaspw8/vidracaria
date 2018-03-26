@@ -1,4 +1,4 @@
-extends('templates.menu')
+@extends('templates.menu')
 
 @section('conteudo')
 <br><br>
@@ -6,7 +6,7 @@ extends('templates.menu')
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h1 class=""> Tamanho </h1>
+          <h1 class=""> EDITAR TAMANHO</h1>
         </div>
       </div>
     </div>
@@ -64,7 +64,7 @@ extends('templates.menu')
        
            <div class="col-md-6"> 
             <div class="form-group">
-              <input type="text" class="form-control d-inline-flex" name="tamanho" placeholder="Tamanho" value="{{$tam->tamanho or old('tamanho')}}"> 
+              <input type="text" class="form-control d-inline-flex" name="tamanho" placeholder="Tamanho" value="{{$tamanho->tamanho or old('tamanho')}}"> 
             </div>
            </div>
                         

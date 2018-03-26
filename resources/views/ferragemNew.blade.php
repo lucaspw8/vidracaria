@@ -40,13 +40,16 @@
               <input type="text" class="form-control d-inline-flex" name="descricao" placeholder="Descrição" value="{{old('telefone')}}"> <small class="form-text text-muted"></small> 
             </div>
            </div>
-           <form>
-                <select name="Cor">
-                  <option value="branco">Branco</option>
-                  <option value="fosco">Fosco</option>
-                  <option value="latao">Latão</option>
+               <div class="col-md-6">
+                <div class="form-group">
+                <select name="cor" class="form-control">
+                  <option>Cor</option>
+                  <option value="Branco">Branco</option>
+                  <option value="Fosco">Fosco</option>
+                  <option value="Latao">Latão</option>
                 </select>
-            </form>
+               </div>
+              </div>
              
              <div class="col-md-12 ">
                  <div class="form-group">

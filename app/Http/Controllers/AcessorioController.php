@@ -20,6 +20,7 @@ class AcessorioController extends Controller
      * @return type
      */
     public function index(){
+  
         $listaAcessorio = $this->acessorio::paginate(10);
         return view('AcessorioList', compact('listaAcessorio'));
     }
@@ -38,7 +39,7 @@ class AcessorioController extends Controller
         $dados = $request->all();
  
         //verifica se os dados do combo box de tamanho ou espessura foram selecionados
-        if($dados['espessura']!='Espessura' && $dados['tamanho']=='Tamanho'){
+        if($dados['espessura']!= 0 && $dados['tamanho']== 0){
             
             //logica de castro com Espessura
             $espessura = $this->espessura->find($dados['espessura']);
@@ -49,11 +50,12 @@ class AcessorioController extends Controller
             }else{
                 return redirect()->route('acessorio.create');
             }
-        }elseif ($dados['espessura']=='Espessura' && $dados['tamanho']!='Tamanho') {
+        }elseif($dados['tamanho']!= 0 && $dados['espessura']== 0) {
             
            //logica de castro com Tamanho
             $tamanho = $this->tamanho->find($dados['tamanho']);
             $verif = $tamanho->acessorio()->create($dados);
+            
             if($verif){
                return redirect()->route('acessorio.index');
             }else{
@@ -83,31 +85,37 @@ class AcessorioController extends Controller
      */
      public function update(Request $request, $id) {
       
-        $dados = $request->all();
-        //verifica se os dados do combo box de tamanho ou espessura foram selecionados
-        if($dados['espessura']!='Espessura' && $dados['tamanho']=='Tamanho'){
+        $dados = $request->all(); 
+        if($dados['espessura']!= 0 && $dados['tamanho']== 0){
+        //logica de atualizar com Espessura
+           $acessorio = $this->acessorio->find($id);
+           $acessorio->Espessura()->dissociate();           
+           $tamanho = $this->espessura->find($dados["espessura"]);
+           $acessorio->Espessura()->associate($tamanho);
+           $verif = $acessorio->update($dados);
+           
             
-            //logica de atualizar com Espessura
-            $espessura = $this->espessura->find($dados['espessura']);
-            $acessorio = $this->acessorio->find($id);
-           $verif = $espessura->acessorio()->update($dados);
             if($verif){
                return redirect()->route('acessorio.index');
             }else{
-                return redirect()->route('acessorio.create');
+                return redirect()->route('acessorio.update',$id);
             }
-        }elseif ($dados['espessura']=='Espessura' && $dados['tamanho']!='Tamanho') {
+        }elseif($dados['tamanho']!= 0 && $dados['espessura']== 0){
+            //logica de atualizar com Tamanho
+           $acessorio = $this->acessorio->find($id);
+           $acessorio->Tamanho()->dissociate();           
+           $tamanho = $this->tamanho->find($dados["tamanho"]);
+           $acessorio->Tamanho()->associate($tamanho);
+           $verif = $acessorio->update($dados);
+           
             
-           //logica de castro com Tamanho
-           $tamanho = $this->tamanho->find($dados['tamanho']);
             if($verif){
                return redirect()->route('acessorio.index');
             }else{
-                return redirect()->route('acessorio.create');
+                return redirect()->route('acessorio.update',$id);
             }
-            
         }else{
-           return redirect()->route('acessorio.create');
+            return redirect()->route('acessorio.update',$id);
         }
     }
     
