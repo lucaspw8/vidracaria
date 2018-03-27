@@ -44,9 +44,9 @@
                 <div class="form-group">
                 <select name="cor" class="form-control">
                   <option>Cor</option>
-                  <option value="Branco">Branco</option>
-                  <option value="Fosco">Fosco</option>
-                  <option value="Latao">Latão</option>
+                  <option value="BRANCO">BRANCO</option>
+                  <option value="FOSCO">FOSCO</option>
+                  <option value="LATÃO">LATÃO</option>
                 </select>
                </div>
               </div>
