@@ -27,29 +27,33 @@
 </div>
 @endif
 <div class="container">
-    <form class="form" method="post" action="{{route('cliente.store')}}" >
+    <form class="form" method="post" action="{{route('kitbox.store')}}" >
         <p class="lead col-md-12 bg-light "><b>Cadastrar Perfil </b></p>
          <div class="row">
-           <div class="col-md-6"> 
+           <div class="col-md-4"> 
             <div class="form-group">
               <input type="text" class="form-control d-inline-flex" name="metragem" placeholder="Metragem" value="{{old('metragem')}}"> 
             </div>
            </div>
-             <form>
-                <select name="Cor">
-                  <option value="branco">@if($perfil->cor == branco) selected @endif Branco</option>
-                  <option value="fosco">@if($perfil->cor == fosco) selected @endif Fosco</option>
-                  <option value="preto">@if($perfil->cor == preto) selected @endif Preto</option>
-                  <option value="prata">@if($perfil->cor == prata) selected @endif Prata</option>
+              <div class="col-md-4">
+                <div class="form-group">
+                <select name="cor" class="form-control">
+                  <option value="branco">Branco</option>
+                  <option value="fosco"> Fosco</option>
+                  <option value="preto">Preto</option>
+                  <option value="prata">Prata</option>
                 </select>
-            </form>
-            <form>
-                <select name="Folhas">
-                  <option value="2folhas">@if($perfil->Folhas == 2folhas) selected @endif 2 </option>
-                  <option value="4folhas">@if($perffil->Folhas == 4folhas) selected @endif 4 </option>
+                </div>
+              </div>
+             <div class="col-md-4">
+                <div class="form-group">
+                <select name="folhas" class="form-control">
+                  <option value="2folhas"> 2 Folhas </option>
+                  <option value="4folhas"> 4 Folhas </option>
                   </option>
                 </select>
-            </form>
+               </div>
+             </div>
              <div class="col-md-12 ">
                  <div class="form-group">
              {{csrf_field()}}

@@ -1,13 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Modelos\Kit_Box;
+use App\Modelos\KitBox;
 use Illuminate\Http\Request;
 
 class KitBoxController extends Controller
 {
     private $kitbox;
-    public function __construct(Kit_Box $kit) {
+    public function __construct(KitBox $kit) {
         $this->kitbox = $kit;
     }
     

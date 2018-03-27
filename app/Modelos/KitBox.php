@@ -4,7 +4,7 @@ namespace App\Modelos;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Kit_Box extends Model
+class KitBox extends Model
 {
      public $timestamps = false;
      protected $fillable = ['id','metragem','cor','folhas'];
