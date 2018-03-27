@@ -30,6 +30,7 @@ Route::get('/ferragem/delete/{id}','FerragemController@delete')->name("ferragem.
 //Rota personalizada criada para a pesquisa de cliente por nome
 Route::post('cliente/buscar','ClienteController@pesquisar')->name("pesquisarCli");
 Route::post('ferragem/buscar','FerragemController@pesquisar')->name("pesquisarFerra");
+Route::post('kitbox/buscar','KitBoxController@pesquisar')->name("pesquisarkitbox");
 
 
 
