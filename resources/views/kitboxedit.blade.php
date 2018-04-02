@@ -31,29 +31,35 @@
     <form class="form" method="post" action="{{route('kitbox.update', $kitbox->id)}}" >
         <p class="lead col-md-12 bg-light "><b>DADOS PERFIL</b></p>
          <div class="row">
-           <div class="col-md-6"> 
+           <div class="col-md-4"> 
             <div class="form-group">
-              <input type="text" class="form-control d-inline-flex" name="metragem" placeholder="Metragem" value="{{old('metragem')}}"> 
+              <input type="text" class="form-control d-inline-flex" name="metragem" placeholder="Metragem" value="{{$kitbox->metragem or old('metragem')}}"> 
             </div>
            </div>
-             <form>
-                <select name="Cor">
-                  <option value="branco">@if($perfil->cor == branco) selected @endif Branco</option>
-                  <option value="fosco">@if($perfil->cor == fosco) selected @endif Fosco</option>
-                  <option value="preto">@if($perfil->cor == preto) selected @endif Preto</option>
-                  <option value="prata">@if($perfil->cor == prata) selected @endif Prata</option>
+             <div class="col-md-4">
+                <div class="form-group">
+                <select name="cor" class="form-control">
+                  <option value="BRANCO">@if($kitbox->cor == "BRANCO") selected @endif BRANCO</option>
+                  <option value="FOSCO">@if($kitbox->cor == "FOSCO") selected @endif FOSCO</option>
+                  <option value="PRETO">@if($kitbox->cor == "PRETO") selected @endif PRETO</option>
+                  <option value="PRATA">@if($kitbox->cor == "PRATA") selected @endif PRATA</option>
                 </select>
-            </form>
-            <form>
-                <select name="Folhas">
-                  <option value="2folhas">@if($perfil->Folhas == 2folhas) selected @endif 2 </option>
-                  <option value="4folhas">@if($perffil->Folhas == 4folhas) selected @endif 4 </option>
+                </div>
+             </div>
+              
+            <div class="col-md-4">
+                <div class="form-group">
+                <select name="folhas" class="form-control">
+                  <option value="2 FOLHAS" @if($kitbox->folhas == "2 FOLHAS") selected @endif> 2 FOLHAS</option>
+                  <option value="4 FOLHAS" @if($kitbox->folhas == "4 FOLHAS") selected @endif >4 FOLHAS</option>
                   </option>
                 </select>
-            </form>
+                </div>
+            </div>
+            
              <div class="col-md-12 ">
                  <div class="form-group">
-              {{method_field('PUT')}}    
+             {{method_field('PUT')}}      
              {{csrf_field()}}
             <button class="btn d-inline-flex text-dark text-uppercase text-center btn-outline-success">Salvar</button>
                  </div>
