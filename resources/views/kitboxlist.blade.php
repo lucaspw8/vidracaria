@@ -8,17 +8,7 @@
         <div class="col-md-10">
             <h1 class=" text-uppercase text-dark">Perfil Kit-Box</h1>
         </div>
-        <div class="col-md-2">
-          <form class="form-inline" method="post" action="{{route('pesquisarkitbox')}}">
-            <div class="input-group">
-                <input type="search" class="form-control" name="buscar">
-             {{csrf_field()}}
-            <button class="btn btn-default btn-sm">
-                <span class="">Buscar... </span>
-            </button>
-            </div>
-          </form>
-        </div>
+     
       </div>
     </div>
   </div>

@@ -38,18 +38,20 @@
               <div class="col-md-4">
                 <div class="form-group">
                 <select name="cor" class="form-control">
-                  <option value="branco">Branco</option>
-                  <option value="fosco"> Fosco</option>
-                  <option value="preto">Preto</option>
-                  <option value="prata">Prata</option>
+                  <option>COR </option>
+                  <option value="BRANCO">BRANCO</option>
+                  <option value="FOSCO">FOSCO</option>
+                  <option value="PRETO">PRETO</option>
+                  <option value="PRATA">PRATA</option>
                 </select>
                 </div>
               </div>
              <div class="col-md-4">
                 <div class="form-group">
                 <select name="folhas" class="form-control">
-                  <option value="2folhas"> 2 Folhas </option>
-                  <option value="4folhas"> 4 Folhas </option>
+                   <option>FOLHAS</option>
+                  <option value="2 FOLHAS"> 2 FOLHAS </option>
+                  <option value="4 FOLHAS"> 4 FOLHAS </option>
                   </option>
                 </select>
                </div>

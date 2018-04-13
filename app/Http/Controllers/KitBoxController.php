@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Modelos\KitBox;
 use Illuminate\Http\Request;
-
+use App\Http\Requests\kitboxRequest;
 class KitBoxController extends Controller
 {
     private $kitbox;
@@ -16,8 +16,8 @@ class KitBoxController extends Controller
      * @return type
      */
     public function index(){
-        $listaKitbox = $this->kitbox::paginate(10);
-        return view('kitbox', compact('listaKitbox'));
+        $listakitbox = $this->kitbox::paginate(10);
+        return view('kitboxlist', compact('listakitbox'));
     }
     
      public function create() {
@@ -34,6 +34,11 @@ class KitBoxController extends Controller
             return redirect()->route('kitbox.create');
         }
     }
+    
+       public function show($id) {
+        $kitbox = $this->kitbox->find($id);
+        return view('kitboxedit', compact('kitbox'));
+       }
     
     public function update(Request $request, $id) {
         $dados = $request->all();

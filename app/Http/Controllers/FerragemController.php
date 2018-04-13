@@ -72,8 +72,8 @@ public function create() {
         }
     }
     
-     public function listar(){
-          $listaFerragem =$this->ferragem::where('nome','like',$nome->buscar."%")->paginate(40);
-          return  $listaFerragem;
+     public function pesquisar(Request $nome){
+          $listaFerra =$this->ferragem::where('utilizacao','like',$nome->buscar."%")->paginate(40);
+          return  view('ferragemlist', compact('listaFerra'));
     }
 }

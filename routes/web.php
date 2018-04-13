@@ -25,7 +25,7 @@ Route::get('/espessura/delete/{id}','EspessuraController@delete')->name("espessu
 Route::get('/tamanho/delete/{id}','TamanhoController@delete')->name("tamanho.delete");
 Route::get('/acessorio/delete/{id}','AcessorioController@delete')->name("acessorio.delete");
 Route::get('/ferragem/delete/{id}','FerragemController@delete')->name("ferragem.delete");
-
+Route::get('/kitbox/delete/{id}','KitBoxController@delete')->name("kitbox.delete");
 
 //Rota personalizada criada para a pesquisa de cliente por nome
 Route::post('cliente/buscar','ClienteController@pesquisar')->name("pesquisarCli");
