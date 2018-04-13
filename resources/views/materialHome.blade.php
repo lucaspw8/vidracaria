@@ -21,7 +21,7 @@
             <a class="nav-link" href="{{route('espessura.index')}}"> Espessuras </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"> Vidros </a>
+            <a class="nav-link" href="{{route('vidro.index')}}"> Vidros </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{route('kitbox.index')}}"> Perfil Kit- box </a>
