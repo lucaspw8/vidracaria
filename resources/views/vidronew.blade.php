@@ -32,8 +32,8 @@
          <div class="row">
                <div class="col-md-6">
                 <div class="form-group">
+                 <span>*COR:</span>  
                 <select name="cor" class="form-control">
-                  <option>Cor</option>
                   <option value="INCOLOR">INCOLOR</option>
                   <option value="VERDE">VERDE</option>
                   <option value="FUMÊ">FUMÊ</option>
@@ -49,12 +49,29 @@
              
               <div class="col-md-6">
                 <div class="form-group">
-                <select name="Espessura" class="form-control">
-                
-                    
+                    <span>*ESPESSURA:</span>  
+                <select name="espessura" class="form-control">                
+                    @if($listaEspessura)
+                        @foreach($listaEspessura as $espessura)
+                         <option value="{{$espessura->id}}">{{$espessura->espessura}}mm</option>
+                        @endforeach
+                    @endif
                 </select>
                </div>
               </div>
+             <div class="col-md-6"> 
+            <div class="form-group">
+                *VALOR COMPRA:
+              <input type="text" class="form-control d-inline-flex" name="valorCompra" placeholder="Valor compra..." value="{{old('valorCompra')}}"> 
+            </div>
+           </div>
+             
+             <div class="col-md-6"> 
+                <div class="form-group">   
+                    *VALOR VENDA:
+                     <input type="text" class="form-control" name="valorVenda" placeholder="Valor venda..." value="{{old('valorVenda')}}">                               
+                </div>
+            </div>
              <div class="col-md-12 ">
                  <div class="form-group">
              {{csrf_field()}}

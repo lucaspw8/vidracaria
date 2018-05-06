@@ -46,8 +46,8 @@
             <tbody>
              @foreach($listaVidro as $vidro)
              <tr onclick="location.href='{{route('vidro.show',$vidro->id)}}';">          
-                <td>{{$ferra->cor}}</td>
-                <td>{{$ferra->espessura}}</td>
+                <td>{{$vidro->cor}}</td>
+                <td>{{$vidro->Espessura->espessura}} mm</td>
                 <td>
                    <a onclick="return confirm('Deseja excluir esse registro?')" href="{{route('vidro.delete', $vidro->id) }}" class="btn btn-danger btn-xs">
                        <span class="glyphicon glyphicon-remove" >Excluir</span> 

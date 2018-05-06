@@ -21,7 +21,7 @@ class AcessorioController extends Controller
      */
     public function index(){
   
-        $listaAcessorio = $this->acessorio::paginate(10);
+        $listaAcessorio = $this->acessorio::paginate(20);
         return view('AcessorioList', compact('listaAcessorio'));
     }
     
@@ -37,7 +37,7 @@ class AcessorioController extends Controller
      */
     public function store(Request $request){
         $dados = $request->all();
- 
+        $erro = "Informe somente uma Espessura ou um Tamanho!";
         //verifica se os dados do combo box de tamanho ou espessura foram selecionados
         if($dados['espessura']!= 0 && $dados['tamanho']== 0){
             
@@ -63,6 +63,7 @@ class AcessorioController extends Controller
             }
             
         }else{
+           
            return redirect()->route('acessorio.create');
         }
     
@@ -90,8 +91,8 @@ class AcessorioController extends Controller
         //logica de atualizar com Espessura
            $acessorio = $this->acessorio->find($id);
            $acessorio->Espessura()->dissociate();           
-           $tamanho = $this->espessura->find($dados["espessura"]);
-           $acessorio->Espessura()->associate($tamanho);
+           $espessura = $this->espessura->find($dados["espessura"]);
+           $acessorio->Espessura()->associate($espessura);
            $verif = $acessorio->update($dados);
            
             
@@ -104,8 +105,8 @@ class AcessorioController extends Controller
             //logica de atualizar com Tamanho
            $acessorio = $this->acessorio->find($id);
            $acessorio->Tamanho()->dissociate();           
-           $tamanho = $this->tamanho->find($dados["tamanho"]);
-           $acessorio->Tamanho()->associate($tamanho);
+           $espessura = $this->tamanho->find($dados["tamanho"]);
+           $acessorio->Tamanho()->associate($espessura);
            $verif = $acessorio->update($dados);
            
             
@@ -135,5 +136,10 @@ class AcessorioController extends Controller
         else{
             return redirect ()->route ('acessorio.index')->with (['errors'=>'Erro ao Deletar']);
         }
+    }
+    
+    public function pesquisar(Request $tipo){
+         $listaAcessorio = $this->acessorio::where('tipo','like',$tipo->buscar."%")->paginate(40);
+         return view('AcessorioList', compact('listaAcessorio'));
     }
 }
