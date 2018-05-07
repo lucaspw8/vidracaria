@@ -37,7 +37,6 @@ class AcessorioController extends Controller
      */
     public function store(Request $request){
         $dados = $request->all();
-        $erro = "Informe somente uma Espessura ou um Tamanho!";
         //verifica se os dados do combo box de tamanho ou espessura foram selecionados
         if($dados['espessura']!= 0 && $dados['tamanho']== 0){
             
@@ -105,8 +104,8 @@ class AcessorioController extends Controller
             //logica de atualizar com Tamanho
            $acessorio = $this->acessorio->find($id);
            $acessorio->Tamanho()->dissociate();           
-           $espessura = $this->tamanho->find($dados["tamanho"]);
-           $acessorio->Tamanho()->associate($espessura);
+           $tamanho = $this->tamanho->find($dados["tamanho"]);
+           $acessorio->Tamanho()->associate($tamanho);
            $verif = $acessorio->update($dados);
            
             
