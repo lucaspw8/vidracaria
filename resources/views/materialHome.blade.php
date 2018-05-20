@@ -27,7 +27,7 @@
             <a class="nav-link" href="{{route('kitbox.index')}}"> Perfil Kit- box </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{route('outro.index')}}"> Outros </a>
+            <a class="nav-link" href="{{route('outros.index')}}"> Outros </a>
           </li>
         </ul>
     </div>

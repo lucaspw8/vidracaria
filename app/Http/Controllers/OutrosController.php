@@ -23,7 +23,7 @@ class OutrosController extends Controller
    public function index(){
   
         $listaOutros = $this->outro::paginate(20);
-        return view('OutroList', compact('listaOutros'));
+        return view('outrosList', compact('listaOutros'));
     }
     
     public function create(){
@@ -47,9 +47,9 @@ class OutrosController extends Controller
             $verif = $espessura->outros()->create($dados);
             
             if($verif){
-               return redirect()->route('outro.index');
+               return redirect()->route('outros.index');
             }else{
-                return redirect()->route('outro.create');
+                return redirect()->route('outros.create');
             }
         }elseif($dados['tamanho']!= 0 && $dados['espessura']== 0) {
             
@@ -58,14 +58,14 @@ class OutrosController extends Controller
             $verif = $tamanho->outros()->create($dados);
             
             if($verif){
-               return redirect()->route('outro.index');
+               return redirect()->route('outros.index');
             }else{
-                return redirect()->route('outro.create');
+                return redirect()->route('outros.create');
             }
             
         }else{
            
-           return redirect()->route('outro.create');
+           return redirect()->route('outros.create');
         }  
     }
     
@@ -78,7 +78,7 @@ class OutrosController extends Controller
         $outros = $this->outro->find($id);
         $listaEspessura = $this->espessura->all();
         $listaTamanho = $this->tamanho->all();
-        return view('OutroEdit', compact('outros','listaEspessura','listaTamanho'));
+        return view('outrosEdit', compact('outros','listaEspessura','listaTamanho'));
         
      }
      
@@ -110,9 +110,9 @@ class OutrosController extends Controller
         }
         
         if($verif){
-               return redirect()->route('outro.index');
+               return redirect()->route('outros.index');
         }else{
-            return redirect()->route('outro.update',$id);
+            return redirect()->route('outros.update',$id);
         }
     }
     
@@ -127,10 +127,10 @@ class OutrosController extends Controller
         $verif = $outro->delete();
         
         if($verif){
-            return redirect()->route('outro.index');
+            return redirect()->route('outros.index');
         }
         else{
-            return redirect ()->route ('outro.index')->with (['errors'=>'Erro ao Deletar']);
+            return redirect ()->route ('outros.index')->with (['errors'=>'Erro ao Deletar']);
         }
     }
     

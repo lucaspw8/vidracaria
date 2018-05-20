@@ -27,6 +27,7 @@ Route::get('/acessorio/delete/{id}','AcessorioController@delete')->name("acessor
 Route::get('/ferragem/delete/{id}','FerragemController@delete')->name("ferragem.delete");
 Route::get('/vidro/delete/{id}','VidroController@delete')->name("vidro.delete");
 Route::get('/kitbox/delete/{id}','KitBoxController@delete')->name("kitbox.delete");
+Route::get('/outros/delete/{id}','OutrosController@delete')->name("outros.delete");
 
 //Rota personalizada criada para a pesquisa por nome
 Route::post('acessorio/buscar','AcessorioController@pesquisar')->name("pesquisarAcessorio");
@@ -34,7 +35,7 @@ Route::post('cliente/buscar','ClienteController@pesquisar')->name("pesquisarCli"
 Route::post('ferragem/buscar','FerragemController@pesquisar')->name("pesquisarFerra");
 Route::post('Vidro/buscar','VidroController@pesquisar')->name("pesquisarVidro");
 Route::post('kitbox/buscar','KitBoxController@pesquisar')->name("pesquisarkitbox");
-Route::post('outro/buscar','OutrosController@pesquisar')->name("pesquisaroutro");
+Route::post('outros/buscar','OutrosController@pesquisar')->name("pesquisarOutros");
 
 
 
@@ -47,5 +48,5 @@ Route::resource('ferragem','FerragemController');
 Route::resource('vidro','VidroController');
 Route::resource('tamanho','TamanhoController');
 Route::resource('kitbox','KitBoxController');
-Route::resource('outro','OutrosController');
+Route::resource('outros','OutrosController');
 
