@@ -5,13 +5,13 @@
 <div class="py-3">
     <div class="container">
       <div class="row">
-        <div class="col-md-10">
+        <div class="col-md-8">
             <h1 class=" text-uppercase text-dark">Acessorios</h1>
         </div>
-        <div class="col-md-2">
-          <form class="form-inline" method="post" action="{{route('pesquisarCli')}}">
-            <div class="input-group">
-               <input type="search" class="form-control" name="buscar">
+        <div class="col-md-4">
+          <form class="form-inline" method="post" action="{{route('pesquisarAcessorio')}}">
+            <div class="input-group ">
+                <input type="search" class="form-control" width="80px" name="buscar">
              {{csrf_field()}}
             <button class="btn btn-default btn-sm">
                 <span class="">Buscar... </span>
@@ -54,7 +54,7 @@
                 <td>{{$lista->valorCompra}}</td>
                 <td>{{$lista->valorVenda}}</td>
                 <td>@if($lista->Tamanho){{$lista->Tamanho->tamanho}}@endif</td>
-                <td>@if($lista->Espessura){{$lista->Espessura->espessura}}@endif</td>
+                <td>@if($lista->Espessura){{$lista->Espessura->espessura}} mm @endif</td>
                 <td>
                    <a onclick="return confirm('Deseja excluir esse registro?')" href="{{route('acessorio.delete', $lista->id) }}" class="btn btn-danger btn-xs">
                        <span class="glyphicon glyphicon-remove" >Excluir</span> 

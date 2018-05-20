@@ -4,11 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Modelos\Vidro;
+use App\Modelos\Espessura;
 class VidroController extends Controller
 {
-    private $vidro;
-    public function __construct(Vidro $vidro) {
+    private $vidro,$espessura;
+    public function __construct(Vidro $vidro,Espessura $espessura) {
         $this->vidro = $vidro;
+        $this->espessura = $espessura;
+        
     }
     
     
@@ -20,8 +23,8 @@ class VidroController extends Controller
     
 public function create() {            
 
-        
-        return view('vidronew');
+        $listaEspessura = $this->espessura->all();
+        return view('vidronew', compact("listaEspessura"));
     }
     
 
@@ -29,7 +32,9 @@ public function create() {
 
     public function store(Request $r){
         $dados = $r->all();
-        $verif = $this->vidro->create($dados);
+        
+        $espessura = $this->espessura->find($dados['espessura']);
+        $verif = $espessura->vidro()->create($dados);
         
         if ($verif) {
             return redirect()->route('vidro.index');
@@ -40,8 +45,9 @@ public function create() {
 
      public function show($id) {
         $vidro = $this->vidro->find($id);
-       
-        return view('vidroEdit', compact('vidro'));
+        $listaEspessura = $this->espessura->all();
+
+        return view('vidroEdit', compact('vidro','listaEspessura'));
         
        
      }
@@ -50,6 +56,9 @@ public function create() {
      public function update(Request $request, $id) {
         $dados = $request->all();
         $vidro = $this->vidro->find($id);
+        $vidro->Espessura()->dissociate();
+        $espessura = $this->espessura->find($dados['espessura']);
+        $vidro->Espessura()->associate($espessura);
         $verif = $vidro->update($dados);
         if ($verif){
             return redirect()->route('vidro.index');
