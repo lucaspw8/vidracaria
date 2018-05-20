@@ -32,16 +32,19 @@
          <div class="row">
            <div class="col-md-6"> 
             <div class="form-group">
+                <span>*NOME:</span>   
               <input type="text" class="form-control d-inline-flex" name="nome" placeholder="Nome" value="{{old('nome')}}"> 
             </div>
            </div>
              <div class="col-md-3"> 
             <div class="form-group">
+                <span>VALOR COMPRA:</span>   
               <input type="text" class="form-control d-inline-flex" name="valorCompra" placeholder="Valor compra" value="{{old('valorCompra')}}"> 
             </div>
            </div>
             <div class="col-md-3"> 
-                <div class="form-group">                                  
+                <div class="form-group">  
+                    <span>VALOR VENDA :</span>   
                      <input type="text" class="form-control" name="valorVenda" placeholder="Valor venda" value="{{old('valorVenda')}}">                               
                 </div>
             </div>

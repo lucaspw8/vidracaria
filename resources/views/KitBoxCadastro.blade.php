@@ -32,6 +32,7 @@
          <div class="row">
            <div class="col-md-4"> 
             <div class="form-group">
+                <span>*METRAGEM:</span>   
               <input type="text" class="form-control d-inline-flex" name="metragem" placeholder="Metragem" value="{{old('metragem')}}"> 
             </div>
            </div>
