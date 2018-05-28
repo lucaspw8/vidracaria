@@ -32,20 +32,20 @@
          <div class="row">
            <div class="col-md-6"> 
             <div class="form-group">
-                <span>*UTILIZAÇÃO:</span>   
-              <input type="text" class="form-control d-inline-flex" name="utilizacao" placeholder="Utilização" value="{{old('utilizacao')}}"> <small class="form-text text-muted"></small> 
+                <span>*Utilização:</span>   
+              <input type="text" class="form-control d-inline-flex" name="utilizacao"  value="{{old('utilizacao')}}"> <small class="form-text text-muted"></small> 
             </div>
            </div>
              <div class="col-md-6"> 
             <div class="form-group">
-                <span>DESCRIÇÃO:</span>   
-              <input type="text" class="form-control d-inline-flex" name="descricao" placeholder="Descrição" value="{{old('telefone')}}"> <small class="form-text text-muted"></small> 
+                <span>Descrição:</span>   
+              <input type="text" class="form-control d-inline-flex" name="descricao" value="{{old('telefone')}}"> <small class="form-text text-muted"></small> 
             </div>
            </div>
                <div class="col-md-6">
                 <div class="form-group">
+                 <span>*Cor:</span>   
                 <select name="cor" class="form-control">  
-                  <option>Cor</option>
                   <option value="BRANCO">BRANCO</option>
                   <option value="FOSCO">FOSCO</option>
                   <option value="LATÃO">LATÃO</option>

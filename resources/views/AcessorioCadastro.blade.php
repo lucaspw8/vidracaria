@@ -33,25 +33,26 @@
            <div class="col-md-6"> 
             <div class="form-group">
                <span>*Tipo:</span>    
-              <input type="text" class="form-control d-inline-flex" name="tipo" placeholder="Tipo" value="{{old('tipo')}}"> 
+              <input type="text" class="form-control d-inline-flex" name="tipo"  value="{{old('tipo')}}"> 
             </div>
            </div>
              <div class="col-md-3"> 
             <div class="form-group">
                 <span>*Valor compra:</span>   
-              <input type="text" class="form-control d-inline-flex" name="valorCompra" placeholder="Valor compra" value="{{old('valorCompra')}}"> 
+              <input type="text" class="form-control d-inline-flex" name="valorCompra" value="{{old('valorCompra')}}"> 
             </div>
            </div>
             <div class="col-md-3"> 
                 <div class="form-group">                                  
-                    <span>Valor venda:</span>   
-                    <input type="text" class="form-control" name="valorVenda" placeholder="Valor venda" value="{{old('valorVenda')}}">                               
+                    <span>*Valor venda:</span>   
+                    <input type="text" class="form-control" name="valorVenda" value="{{old('valorVenda')}}">                               
                 </div>
             </div>
             <div class="col-md-6">
                  <div class="form-group">
+                     <span>Espessura:</span>   
                     <select name="espessura" class="form-control">
-                        <option value="0">Espessura</option>
+                        <option value="0">espessura...</option>
                         @if($listaEspessura)
                             @foreach($listaEspessura as $espessura)
                             <option value="{{$espessura->id}}">{{$espessura->espessura}}mm</option>
@@ -63,8 +64,9 @@
               
              <div class="col-md-6">
                 <div class="form-group">
+                   <span>Tamanho:</span>   
                   <select name="tamanho" class="form-control">
-                        <option value="0">Tamanho</option>
+                        <option value="0">tamanho...</option>
                          @if($listaTamanho)
                             @foreach($listaTamanho as $tamanho)
                             <option value="{{$tamanho->id}}" >{{$tamanho->tamanho}}</option>

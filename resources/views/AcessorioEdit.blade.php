@@ -32,23 +32,27 @@
          <div class="row">
            <div class="col-md-6"> 
             <div class="form-group">
-              <input type="text" class="form-control d-inline-flex" name="tipo" placeholder="Tipo" value="{{$acessorio->tipo or old('tipo')}}"> 
+                <span>*Tipo:</span> 
+              <input type="text" class="form-control d-inline-flex" name="tipo" value="{{$acessorio->tipo or old('tipo')}}"> 
             </div>
            </div>
              <div class="col-md-3"> 
             <div class="form-group">
-              <input type="text" class="form-control d-inline-flex" name="valorCompra" placeholder="Valor compra" value="{{$acessorio->valorCompra or old('valorCompra')}}"> 
+               <span>*Valor compra:</span> 
+              <input type="text" class="form-control d-inline-flex" name="valorCompra" value="{{$acessorio->valorCompra or old('valorCompra')}}"> 
             </div>
            </div>
             <div class="col-md-3"> 
-                <div class="form-group">                                  
-                     <input type="text" class="form-control" name="valorVenda" placeholder="Valor venda" value="{{$acessorio->valorVenda or old('valorVenda')}}">                               
+                <div class="form-group">
+                    <span>*Valor venda:</span> 
+                     <input type="text" class="form-control" name="valorVenda" value="{{$acessorio->valorVenda or old('valorVenda')}}">                               
                 </div>
             </div>
             <div class="col-md-6">
                  <div class="form-group">
+                     <span>*Espessura:</span> 
                     <select name="espessura" class="form-control">
-                        <option>Espessura</option>
+                        <option>espessura...</option>
                         @if($listaEspessura)
                             @foreach($listaEspessura as $espessura)
                             <option value="{{$espessura->id}}" @if($espessura->id == $acessorio->espessura_id)selected @endif>{{$espessura->espessura}}mm</option>
@@ -60,8 +64,9 @@
               
              <div class="col-md-6">
                 <div class="form-group">
+                  <span>*Tamanho:</span> 
                   <select name="tamanho" class="form-control">
-                        <option>Tamanho</option>
+                        <option>tamanho...</option>
                          @if($listaTamanho)
                             @foreach($listaTamanho as $tamanho)
                             <option value="{{$tamanho->id}}" @if($tamanho->id == $acessorio->tamanho_id)selected @endif >{{$tamanho->tamanho}}</option>

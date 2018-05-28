@@ -32,14 +32,14 @@
          <div class="row">
            <div class="col-md-4"> 
             <div class="form-group">
-                <span>*METRAGEM:</span>   
-              <input type="text" class="form-control d-inline-flex" name="metragem" placeholder="Metragem" value="{{old('metragem')}}"> 
+                <span>*Metragem:</span>   
+              <input type="text" class="form-control d-inline-flex" name="metragem" placeholder="Metragem..." value="{{old('metragem')}}"> 
             </div>
            </div>
               <div class="col-md-4">
                 <div class="form-group">
-                <select name="cor" class="form-control">
-                  <option>COR </option>
+                 <span>*Cor:</span> 
+                <select name="cor" class="form-control">           
                   <option value="BRANCO">BRANCO</option>
                   <option value="FOSCO">FOSCO</option>
                   <option value="PRETO">PRETO</option>
@@ -49,8 +49,9 @@
               </div>
              <div class="col-md-4">
                 <div class="form-group">
+                 <span>*Folhas:</span> 
                 <select name="folhas" class="form-control">
-                   <option>FOLHAS</option>
+                   
                   <option value="2 FOLHAS"> 2 FOLHAS </option>
                   <option value="4 FOLHAS"> 4 FOLHAS </option>
                   </option>

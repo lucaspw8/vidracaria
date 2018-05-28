@@ -32,16 +32,19 @@
          <div class="row">
            <div class="col-md-6"> 
             <div class="form-group">
-              <input type="text" class="form-control d-inline-flex" name="utilizacao" placeholder="Utilização" value="{{ $ferragem->utilizacao or old('utilizacao')}}"> <small class="form-text text-muted"></small> 
+              <span>*Utilização:</span>   
+              <input type="text" class="form-control d-inline-flex" name="utilizacao" value="{{ $ferragem->utilizacao or old('utilizacao')}}"> <small class="form-text text-muted"></small> 
             </div>
            </div>
              <div class="col-md-6"> 
             <div class="form-group">
-              <input type="text" class="form-control d-inline-flex" name="descricao" placeholder="Descrição" value="{{ $ferragem->descricao or old('descricao')}}"> <small class="form-text text-muted"></small> 
+             <span>*Descrição:</span>   
+              <input type="text" class="form-control d-inline-flex" name="descricao" value="{{ $ferragem->descricao or old('descricao')}}"> <small class="form-text text-muted"></small> 
             </div>
            </div>
              <div class="col-md-6">
                 <div class="form-group">
+                 <span>*Cor:</span>   
                 <select name="cor"class="form-control">
                   <option value="BRANCO" @if($ferragem->cor == "BRANCO") selected @endif>  BRANCO</option>
                   <option value="FOSCO" @if($ferragem->cor == "FOSCO") selected @endif >FOSCO</option>
